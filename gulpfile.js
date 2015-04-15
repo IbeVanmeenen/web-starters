@@ -195,17 +195,6 @@ gulp.task('video', function () {
 });
 
 
-// Styleguide
-gulp.task('styleguide', function () {
-    return gulp.src(app.styleguide, {read: false})
-        .pipe(plugins.shell([
-            'bundle exec hologram',
-        ], {
-            cwd: app.styleguide
-        }));
-});
-
-
 // Clean
 gulp.task('clean', function(done) {
     del([distPath + '**'], done);
@@ -219,7 +208,6 @@ gulp.task('watch', function () {
     gulp.watch(app.liveReloadFiles).on('change', function(file) {
         plugins.livereload.changed(file.path);
         plugins.connect.reload();
-        gulp.start('styleguide');
     });
 
     // Styles
@@ -247,7 +235,6 @@ gulp.task('build', function(done) {
     runSequence(
         'clean',
         ['styles', 'scripts', 'images', 'video'],
-        'styleguide',
     done);
 });
 
@@ -257,6 +244,6 @@ gulp.task('default', function(done) {
     runSequence(
         'clean',
         ['styles', 'scripts', 'images', 'video'],
-        ['styleguide', 'connect', 'watch'],
+        ['connect', 'watch'],
     done);
 });
