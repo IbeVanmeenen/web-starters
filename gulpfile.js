@@ -31,6 +31,7 @@ var Notifier = require('node-notifier');
 // (Errors will still be logged in Terminal)
 var showErrorNotifications = true;
 
+
 /* Config
    ========================================================================== */
 var resourcesPath = 'app';
@@ -67,7 +68,6 @@ var app = {
 
 /* Errorhandling
    ========================================================================== */
-
 var errorLogger = function(headerMessage,errorMessage){
     var header = headerLines(headerMessage);
         header += '\n             '+ headerMessage +'\n           ';
@@ -92,6 +92,7 @@ var headerLines = function(message){
     }
     return lines;
 }
+
 
 /* Tasks
    ========================================================================== */
@@ -182,7 +183,7 @@ gulp.task('images', function () {
 });
 
 
-// Fonts
+// Video
 gulp.task('video', function () {
     return gulp.src(app.video)
         // Set desitination
@@ -203,21 +204,18 @@ gulp.task('clean', function(done) {
 
 // Watch
 gulp.task('watch', function () {
-    // Livereload
+    // Reload
     plugins.livereload.listen();
     gulp.watch(app.liveReloadFiles).on('change', function(file) {
         plugins.livereload.changed(file.path);
         plugins.connect.reload();
     });
 
-    // Styles
+    // Watch
     gulp.watch(app.scss, ['styles']);
-
-    // Styles
     gulp.watch(app.js, ['scripts']);
-
-    // Images
     gulp.watch(app.img, ['images']);
+    gulp.watch(app.video, ['video']);
 });
 
 
