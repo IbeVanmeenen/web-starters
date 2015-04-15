@@ -1,2 +1,3 @@
-# small-web-starter
+# Small starter-kit
+
 Simple startkit for websites
