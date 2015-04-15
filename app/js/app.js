@@ -8,7 +8,6 @@ startkit.app = (function(undefined) {
 
     var exports = this.app;
 
-
     // Init
     var init = function() {
         // Init (self-executing function)
