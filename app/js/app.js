@@ -1,26 +1,26 @@
 /* ==========================================================================
-   UI Hackday
+   Startkit
    ========================================================================== */
 
-var app = app || {};
+var startkit = startkit || {};
 
-app.personalDemo = (function(window, undefined) {
+startkit.app = (function(undefined) {
 
-    var init;
+    var exports = this.app;
 
 
     // Init
-    init = function() {
+    var init = function() {
+        // Init (self-executing function)
+    }();
 
+
+    // Public function
+    exports.publicFunction = function() {
+        // Public function
     };
-
-
-    return {
-        init: init
-    };
-
-}(window));
+};
 
 document.addEventListener('DOMContentLoaded', function(event) {
-    app.personalDemo.init();
+    startkit.app();
 });
