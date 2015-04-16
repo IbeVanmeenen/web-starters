@@ -100,10 +100,7 @@ var headerLines = function(message){
 gulp.task('styles', function() {
     return gulp.src(app.scss)
         // Sass
-        .pipe(plugins.rubySass({
-            loadPath: './',
-            bundleExec: true,
-        }))
+        .pipe(plugins.sass())
         .on('error', function (err) {
             errorLogger('SASS Compilation Error', err.message);
         })
