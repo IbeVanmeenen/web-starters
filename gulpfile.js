@@ -222,6 +222,16 @@ gulp.task('connect', function() {
 });
 
 
+// Default
+gulp.task('default', function(done) {
+    runSequence(
+        'clean',
+        ['styles', 'scripts', 'images', 'video'],
+        ['connect', 'watch'],
+    done);
+});
+
+
 // Build
 gulp.task('build', function(done) {
     runSequence(
@@ -231,11 +241,10 @@ gulp.task('build', function(done) {
 });
 
 
-// Default
-gulp.task('default', function(done) {
-    runSequence(
-        'clean',
-        ['styles', 'scripts', 'images', 'video'],
-        ['connect', 'watch'],
-    done);
+// Typo fallbacks
+gulp.task('biuld', function(done) {
+    gulp.start('build');
+});
+gulp.task('buil', function(done) {
+    gulp.start('build');
 });
