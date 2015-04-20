@@ -8,6 +8,7 @@
         "gulp": "~3.8",
         "run-sequence": "1.0.2",
         "del": "^1.1.1",
+        "lodash": "^3.0.0",
         "gulp-load-plugins": "0.6.0",
         "gulp-changed": "0.4.1",
         "gulp-size": "1.0.0",

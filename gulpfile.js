@@ -4,19 +4,28 @@
    Gulpfile
 
    Development-tasks:
-   - gulp (build + watch)
+   - gulp (=== build + watch)
    - gulp build
    - gulp watch
    ========================================================================== */
 
 
-/* Setup Gulp
+/* Require
    ========================================================================== */
 // Require Gulp
 var gulp = require('gulp');
 
 // Load Gulp plugins
 var plugins = require('gulp-load-plugins')();
+
+// File System
+var fs = require('fs');
+
+// Path
+var path = require('path');
+
+// Lodash
+var _ = require('lodash')
 
 // Load sequence
 var runSequence = require('run-sequence');
@@ -27,43 +36,26 @@ var del = require('del');
 // Load the notifier.
 var Notifier = require('node-notifier');
 
-// Set to false if you don't want notifications when an error happens.
-// (Errors will still be logged in Terminal)
-var showErrorNotifications = true;
 
 
-/* Config
+/* Load config
    ========================================================================== */
-var resourcesPath = 'app';
-var distPath = 'dist';
-var bowerComponentsPath = 'bower_components';
+var bowerComponentsPath = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.bowerrc'))).directory;
 
-var app = {
-    dist: {
-        css: distPath + '/css',
-        js: distPath + '/js',
-        img: distPath + '/img',
-        video: distPath + '/video'
-    },
+var config = fs.readFileSync(path.resolve(__dirname, 'gonfig.json'), 'UTF-8'),
+    vars = _.merge({
+        'bowerComponentsPath': bowerComponentsPath
+    }, JSON.parse(config).vars);
 
-    styleguide: resourcesPath + '/styleguide',
+var resourcesPath = vars.resourcesPath;
+var distPath = vars.distPath;
 
-    img: resourcesPath + '/img/**/*.{png,jpg,jpeg,gif,svg,webp}',
-    video: resourcesPath + '/video/**/*.{webm,mp4}',
+_.forEach(vars, function(value, key) {
+    config = config.replace(new RegExp('\<\=\s*' + key + '\s*\>', 'ig'), value);
+});
 
-    scss: resourcesPath + '/scss/**/*.scss',
-    scssFolder: resourcesPath + '/scss/',
+config = JSON.parse(config);
 
-    js: [
-        bowerComponentsPath + '/velocity/velocity.min.js',
-        resourcesPath + '/js/*.js'
-    ],
-
-    liveReloadFiles: [
-        distPath + '/css/style.min.css',
-        distPath + '/styleguide/css/style.min.css'
-    ]
-};
 
 
 /* Errorhandling
@@ -75,7 +67,7 @@ var errorLogger = function(headerMessage,errorMessage){
         header += '\r\n \r\n';
     plugins.util.log(plugins.util.colors.red(header) + '             ' + errorMessage + '\r\n')
 
-    if(showErrorNotifications){
+    if(config.showErrorNotifications){
         var notifier = new Notifier();
         notifier.notify({
             'title': headerMessage,
@@ -94,11 +86,12 @@ var headerLines = function(message){
 }
 
 
+
 /* Tasks
    ========================================================================== */
 // Styles
 gulp.task('styles', function() {
-    return gulp.src(app.scss)
+    return gulp.src(config.scss)
         // Sass
         .pipe(plugins.sass())
         .on('error', function (err) {
@@ -109,7 +102,7 @@ gulp.task('styles', function() {
         .pipe(plugins.combineMq())
 
         // Prefix where needed
-        .pipe(plugins.autoprefixer('last 2 versions'))
+        .pipe(plugins.autoprefixer(config.browserSupport))
 
         // Minify output
         .pipe(plugins.minifyCss())
@@ -120,7 +113,7 @@ gulp.task('styles', function() {
         }))
 
         // Write to output
-        .pipe(gulp.dest(app.dist.css))
+        .pipe(gulp.dest(config.dist.css))
 
         // Show total size of css
         .pipe(plugins.size({
@@ -131,7 +124,7 @@ gulp.task('styles', function() {
 
 // JS
 gulp.task('scripts', function() {
-    return gulp.src(app.js)
+    return gulp.src(config.js)
         // Uglify
         .pipe(plugins.uglify({
             mangle: {
@@ -146,7 +139,7 @@ gulp.task('scripts', function() {
         .pipe(plugins.concat('footer.min.js'))
 
         // Set destination
-        .pipe(gulp.dest(app.dist.js))
+        .pipe(gulp.dest(config.dist.js))
 
         // Show total size of js
         .pipe(plugins.size({
@@ -157,9 +150,9 @@ gulp.task('scripts', function() {
 
 // Images
 gulp.task('images', function () {
-    return gulp.src(app.img)
+    return gulp.src(config.img)
         // Only optimize changed images
-        .pipe(plugins.changed(app.dist.img))
+        .pipe(plugins.changed(config.dist.img))
 
         // Imagemin
         .pipe(plugins.imagemin({
@@ -171,7 +164,7 @@ gulp.task('images', function () {
         }))
 
         // Set desitination
-        .pipe(gulp.dest(app.dist.img))
+        .pipe(gulp.dest(config.dist.img))
 
         // Show total size of images
         .pipe(plugins.size({
@@ -182,9 +175,9 @@ gulp.task('images', function () {
 
 // Video
 gulp.task('video', function () {
-    return gulp.src(app.video)
+    return gulp.src(config.video)
         // Set desitination
-        .pipe(gulp.dest(app.dist.video))
+        .pipe(gulp.dest(config.dist.video))
 
         // Show total size of files
         .pipe(plugins.size({
@@ -209,10 +202,10 @@ gulp.task('watch', function () {
     });
 
     // Watch
-    gulp.watch(app.scss, ['styles']);
-    gulp.watch(app.js, ['scripts']);
-    gulp.watch(app.img, ['images']);
-    gulp.watch(app.video, ['video']);
+    gulp.watch(config.scss, ['styles']);
+    gulp.watch(config.js, ['scripts']);
+    gulp.watch(config.img, ['images']);
+    gulp.watch(config.video, ['video']);
 });
 
 
