@@ -60,15 +60,17 @@ config = JSON.parse(config);
 
 /* Errorhandling (Credits @JensGyslink)
    ========================================================================== */
-var errorLogger = function(headerMessage,errorMessage){
+var errorLogger = function(headerMessage,errorMessage) {
     var header = headerLines(headerMessage);
         header += '\n             '+ headerMessage +'\n           ';
         header += headerLines(headerMessage);
         header += '\r\n \r\n';
+
     plugins.util.log(plugins.util.colors.red(header) + '             ' + errorMessage + '\r\n')
 
-    if(config.showErrorNotifications){
+    if (config.showErrorNotifications) {
         var notifier = new Notifier();
+
         notifier.notify({
             'title': headerMessage,
             'message': errorMessage,
@@ -79,9 +81,11 @@ var errorLogger = function(headerMessage,errorMessage){
 
 var headerLines = function(message){
     var lines = '';
-    for(var i = 0; i< (message.length + 4); i++){
+
+    for (var i = 0; i< (message.length + 4); i++) {
         lines += '-';
     }
+
     return lines;
 }
 
@@ -94,7 +98,7 @@ gulp.task('styles', function() {
     return gulp.src(config.scss)
         // Sass
         .pipe(plugins.sass())
-        .on('error', function (err) {
+        .on('error', function(err) {
             errorLogger('SASS Compilation Error', err.message);
         })
 
@@ -108,7 +112,7 @@ gulp.task('styles', function() {
         .pipe(plugins.minifyCss())
 
         // Rename the file to respect naming covention.
-        .pipe(plugins.rename(function(path){
+        .pipe(plugins.rename(function(path) {
             path.basename += '.min';
         }))
 
@@ -131,7 +135,7 @@ gulp.task('scripts', function() {
                 except: ['jQuery']
             }
         }))
-        .on('error', function (err){
+        .on('error', function(err) {
             errorLogger('Javascript Error', err.message);
         })
 
@@ -149,7 +153,7 @@ gulp.task('scripts', function() {
 
 
 // Images
-gulp.task('images', function () {
+gulp.task('images', function() {
     return gulp.src(config.img)
         // Only optimize changed images
         .pipe(plugins.changed(config.dist.img))
@@ -174,7 +178,7 @@ gulp.task('images', function () {
 
 
 // Video
-gulp.task('video', function () {
+gulp.task('video', function() {
     return gulp.src(config.video)
         // Set desitination
         .pipe(gulp.dest(config.dist.video))
@@ -193,7 +197,7 @@ gulp.task('clean', function(done) {
 
 
 // Watch
-gulp.task('watch', function () {
+gulp.task('watch', function() {
     // Reload
     plugins.livereload.listen();
     gulp.watch(app.liveReloadFiles).on('change', function(file) {
