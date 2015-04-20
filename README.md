@@ -4,8 +4,7 @@ Simple startkit for building quick prototypes and webpages.<br>
 Based on workflow at @Kunstmaan.
 
 ## Basic
-This startkit includes all you need to start a simple prototype or webpage(s).
-**Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css and **Bower** will manage your vendors.
+This startkit includes all you need to start a simple prototype or webpage(s). A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css and **Bower** will manage your vendors.
 
 
 ## Getting started
@@ -17,6 +16,8 @@ Now do `bower install` in your terminal at the root of the project folder to ins
 
 ### Gulp
 Gulp will automate all your frontend tasks for you. It will read out the **gonfig.json** file to get things started. It takes care of all your assest and optimizes them all. Take a look at **gulpfile.js** to know what is happening. Every task is well documented.
+
+Use the **gonfig.json** file to setup your project for gulp. Define your basic paths and specify witch vendors and js you want in your main javascript file.
 
 To get started, run `npm install` in your terminal at the root of the project folder and then run `gulp` to build your app and to start a local server (localhost:8080) and a watch for your live-reload files.
 
@@ -30,6 +31,8 @@ The index.html is the base-html file of the starter-kit. It includes the bare-mi
 There is also a **.editorconfig** file present to ensure code-consistency throughout your files.
 
 ## Contribution
+
+Want to contribute? Awesome Sause! Please read on!
 
 ##### Git Flow
 Small-starter-kit works with [git-flow](https://github.com/nvie/gitflow).
