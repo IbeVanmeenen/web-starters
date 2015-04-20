@@ -6,6 +6,5 @@ Based on workflow at @Kunstmaan.
 
 
 ## TODO
-- Add gonfig
-- Use inject to split up dev and build code
+- Use inject to split up dev and build code?
 - Keep being awesome
