@@ -38,7 +38,7 @@ var Notifier = require('node-notifier');
 
 
 
-/* Load config
+/* Load config (Credits @DaanPoron)
    ========================================================================== */
 var bowerComponentsPath = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.bowerrc'))).directory;
 
@@ -58,7 +58,7 @@ config = JSON.parse(config);
 
 
 
-/* Errorhandling
+/* Errorhandling (Credits @JensGyslink)
    ========================================================================== */
 var errorLogger = function(headerMessage,errorMessage){
     var header = headerLines(headerMessage);
