@@ -1,4 +1,4 @@
-# Small starter-kit
+# Small Web Starter
 
 Simple startkit for building quick prototypes and webpages.<br>
 Based on workflow at @Kunstmaan.
