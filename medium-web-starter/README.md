@@ -1,10 +1,10 @@
 # Medium Web Starter
 
-Startkit for building websites witch includes a styleguide and basic components.<br>
+Startkit for building websites which includes a styleguide and basic components.<br>
 Based on workflow at @Kunstmaan.
 
 ## Basic
-This startkit includes all you need to start a simple prototype or webpage(s). A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css and **Bower** will manage your vendors.
+This startkit includes all you need to start your next website. A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css and **Bower** will manage your vendors. **Hologram** will provide your styleguide.
 
 
 ## Getting started
