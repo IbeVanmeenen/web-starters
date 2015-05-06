@@ -1,0 +1,33 @@
+{
+    "vars": {
+        "distPath": "dist/",
+        "resourcesPath": "app/"
+    },
+
+    "scss": "<=resourcesPath>scss/**/*.scss",
+    "img": "<=resourcesPath>img/**/*.{png,jpg,jpeg,gif,svg,webp}",
+    "video": "<=resourcesPath>video/**/*.{webm,mp4}",
+    "js": [
+        "<=bowerComponentsPath>velocity/velocity.min.js",
+        "<=resourcesPath>js/**/*.js"
+    ],
+
+    "dist": {
+        "css": "<=distPath>css",
+        "js": "<=distPath>js",
+        "img": "<=distPath>img",
+        "video": "<=distPath>video"
+    },
+
+    "browserSupport": [
+        "last 2 versions"
+    ],
+
+    "liveReloadFiles": [
+        "<=distPath>css/style.min.css",
+        "<=distPath>js/*.js",
+        "<=distPath>styleguide/css/style.min.css"
+    ],
+
+    "showErrorNotifications": "false"
+}
