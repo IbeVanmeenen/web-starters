@@ -200,7 +200,7 @@ gulp.task('clean', function(done) {
 gulp.task('watch', function() {
     // Reload
     plugins.livereload.listen();
-    gulp.watch(app.liveReloadFiles).on('change', function(file) {
+    gulp.watch(config.liveReloadFiles).on('change', function(file) {
         plugins.livereload.changed(file.path);
         plugins.connect.reload();
     });
