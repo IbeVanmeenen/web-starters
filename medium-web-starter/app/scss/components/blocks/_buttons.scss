@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Blocks - Buttons
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    margin: 0;
+    padding: .3em 1.5em;
+
+    background: none;
+    border: 0;
+    -webkit-appearance: none;
+
+    font-weight: 500;
+    line-height: $line-height--base;
+
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+
+    &:active, &:focus {
+        outline: 0;
+    }
+}
+
+
+/* Types
+   ========================================================================== */
+.btn--primary {}
+
+
+
+
+/*doc
+---
+title: Buttons
+name: 01_buttons
+category: Blocks
+---
+<h4>Types</h4>
+```html_example
+<p>
+    <button type="button" class="btn">Button</button>
+</p>
+```
+
+*/
