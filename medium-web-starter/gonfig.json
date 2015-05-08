@@ -29,5 +29,6 @@
         "<=distPath>styleguide/css/style.min.css"
     ],
 
+    "styleguideFolder": "<=resourcesPath>styleguide",
     "showErrorNotifications": "false"
 }
