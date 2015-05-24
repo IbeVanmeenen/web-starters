@@ -23,8 +23,9 @@ title: Colors
 name: 01_colors
 category: General
 ---
-<div class='styleguide__color-template'><i class='styleguide__color-template__example' style='background: #444;'></i><code class='styleguide__code'>#444 - $black</code></code></div>
-<div class='styleguide__color-template'><i class='styleguide__color-template__example' style='background: #fff;'></i><code class='styleguide__code'>#fff - $white</code></code></div>
-
-<div class='styleguide__color-template'><i class='styleguide__color-template__example' style='background: #aaa;'></i><code class='styleguide__code'>#aaa - $grey</code></code></div>
+<div class="styleguide__color-template-container">
+    <div class='styleguide__color-template' style='background: #444;'>#444 - $black</div>
+    <div class='styleguide__color-template styleguide__color-template--light' style='background: #fff;'>#fff - $white</div>
+    <div class='styleguide__color-template' style='background: #aaa;'>#aaa - $grey</div>
+</div>
 */
