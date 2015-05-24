@@ -25,6 +25,7 @@
 
     "liveReloadFiles": [
         "<=distPath>css/style.min.css",
+        "app/styleguide/doc_assets/static/hologram--startkit.css",
         "<=distPath>js/*.js",
         "<=distPath>styleguide/css/style.min.css"
     ],
