@@ -1,3 +1,3 @@
 # Startkit Styleguide
 
-Put any content for the index page here.
+This styleguide is here to stay.

@@ -163,7 +163,7 @@ body {
    ========================================================================== */
 .styleguide__content-container {
     max-width: 100%;
-    padding: 0 20px;
+    padding: 0 20px 100px;
 }
 
 .styleguide__content-container > h1 {
@@ -198,6 +198,10 @@ body {
 .styleguide__content-container--index > h1:first-child {
     padding-top: 100px !important;
     margin: 0 0 40px 0 !important;
+}
+
+.styleguide__content-container > p.styleguide {
+    margin: 40px 0 10px;
 }
 
 

@@ -5,14 +5,15 @@
    Never add styles directly to this file
    ========================================================================== */
 
-$black:         #444;
+$black:         #181c21;
 $white:         #fff;
 
-$grey:          #aaa;
+$grey:          #d8d8d8;
 
+$blue:          #5282E8;
 
-$link-color:            #555;
-$link-color--hover:     #666;
+$link-color:            $blue;
+$link-color--hover:     darken($blue, 10%);
 
 
 
@@ -24,8 +25,9 @@ name: 01_colors
 category: General
 ---
 <div class="styleguide__color-template-container">
-    <div class='styleguide__color-template' style='background: #444;'>#444 - $black</div>
+    <div class='styleguide__color-template' style='background: #181c21;'>#181c21 - $black</div>
     <div class='styleguide__color-template styleguide__color-template--light' style='background: #fff;'>#fff - $white</div>
-    <div class='styleguide__color-template' style='background: #aaa;'>#aaa - $grey</div>
+    <div class='styleguide__color-template styleguide__color-template--light' style='background: #d8d8d8;'>#d8d8d8 - $grey</div><br>
+    <div class='styleguide__color-template' style='background: #5282E8;'>#5282E8 - $blue</div>
 </div>
 */
