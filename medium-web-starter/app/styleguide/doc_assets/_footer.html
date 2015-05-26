@@ -1,3 +1,20 @@
+            <% if file_name.include?('index.html') %>
+                <p>
+                    All styles are divided into categories. You can find them here:<br>
+
+                    <% @categories.each do |category, file_name, index| %>
+                        <% current_category = title.downcase %>
+                        <% this_category = file_name.split(".").first.downcase %>
+
+                        <% if file_name.include?('index.html') %>
+                        <% else %>
+                            <a href="<%= file_name %>" class="styleguide__index-category-links">
+                                <%= category %>
+                            </a>
+                        <% end %>
+                    <% end %>
+                </p>
+            <% end %>
         </div>
     </main>
     </div>

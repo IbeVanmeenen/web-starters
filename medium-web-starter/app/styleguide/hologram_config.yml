@@ -33,7 +33,7 @@ dependencies:
 # Mark which category should be the index page
 # Alternatively, you may have an index.md in the documentation assets
 # folder instead of specifying this config.
-index: basics
+index: styleguide
 
 # To additionally output navigation for top level sections, set the value to
 # 'section'. To output navigation for sub-sections,
@@ -46,3 +46,6 @@ nav_level: all
 # If you want Hologram to exit on these warnings, set the value to 'true'
 # (Default value is 'false')
 exit_on_warnings: false
+
+# The global title that is displayed at the top of the pages
+global_title: Styleguide

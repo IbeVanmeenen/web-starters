@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Startkit - <%= title %></title>
+    <title>
+        Startkit - <% if file_name.include?('index.html') %>Index<% else %><%= title %><% end %>
+    </title>
 
     <!-- Styleguide styles -->
     <link rel="stylesheet" href="static/hologram--startkit.css">
@@ -29,33 +31,38 @@
                 Startkit
             </h1>
             <nav role="navigation" class="styleguide__header__main-nav">
-            <% @categories.each do |category, file_name| %>
-                <% current_category = title.downcase %>
-                <% this_category = file_name.split(".").first.downcase %>
+                <% @categories.each do |category, file_name| %>
+                    <% current_category = title.downcase %>
+                    <% this_category = file_name.split(".").first.downcase %>
 
-                <% if current_category == this_category %>
-                <a href="<%= file_name %>" class="styleguide__header__main-nav__item styleguide__header__main-nav__item--active">
-                    <%= category %>
-                </a>
-                <% else %>
-                <a href="<%= file_name %>" class="styleguide__header__main-nav__item">
-                    <%= category %>
-                </a>
+                    <% if file_name.include?('index.html') %>
+                        <a href="<%= file_name %>" class="styleguide__header__main-nav__item<% if current_category == '' %> styleguide__header__main-nav__item--active<% end %>">
+                            Index
+                        </a>
+                    <% else %>
+                        <a href="<%= file_name %>" class="styleguide__header__main-nav__item<% if current_category == this_category %> styleguide__header__main-nav__item--active<% end %>">
+                            <%= category %>
+                        </a>
+                    <% end %>
                 <% end %>
-            <% end %>
             </nav>
         </div>
     </header>
 
-    <main role="main" class="styleguide__main">
-    <div class="styleguide__block-navigation">
-        <nav role="navigation" id="holo-toc-kunstmaan__nav" class="styleguide__block-navigation__menu">
-        <% @blocks.each do |b| %>
-            <a href="#<%= b[:name] %>" class="styleguide__block-navigation__item">
-            <%= b[:title] %>
-            </a>
-        <% end %>
-        </nav>
-    </div>
 
-    <div class="styleguide__content-container">
+        <% if file_name.include?('index.html') %>
+            <main role="main" class="styleguide__main styleguide__main--wide">
+                <div class="styleguide__content-container styleguide__content-container--index">
+        <% else %>
+            <main role="main" class="styleguide__main">
+                <div class="styleguide__block-navigation">
+                    <nav role="navigation" id="holo-toc-kunstmaan__nav" class="styleguide__block-navigation__menu">
+                    <% @blocks.each do |b| %>
+                        <a href="#<%= b[:name] %>" class="styleguide__block-navigation__item">
+                        <%= b[:title] %>
+                        </a>
+                    <% end %>
+                    </nav>
+                </div>
+                <div class="styleguide__content-container">
+        <% end %>
