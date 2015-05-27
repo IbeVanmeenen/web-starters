@@ -11,6 +11,8 @@ That's it. Go and create, become a Master Builder.
 
 ### Contribution
 
+Want to contribute? Awesome Sause! Please read on!
+
 ##### Git Flow
 Web Starters works with [git-flow](https://github.com/nvie/gitflow).
 
