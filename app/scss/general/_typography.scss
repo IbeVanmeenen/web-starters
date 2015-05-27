@@ -71,11 +71,13 @@ h1, h2, h3, h4, h5, h6 {
 
 // Specific
 h1 {
-    font-size: 2rem;
+    font-family: $font-family--base;
+    font-size: 2.3rem;
     color: $black;
+    text-transform: uppercase;
 
     @media(min-width: $screen-md) {
-        font-size: 5rem;
+        font-size: 2.5rem;
     }
 }
 
