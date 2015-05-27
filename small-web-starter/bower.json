@@ -1,7 +1,0 @@
-{
-    "name": "Startkit",
-    "version": "1.0.0",
-    "dependencies": {
-        "velocity": "latest"
-    }
-}

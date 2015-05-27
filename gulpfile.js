@@ -226,7 +226,7 @@ gulp.task('connect', function() {
 gulp.task('default', function(done) {
     runSequence(
         'clean',
-        ['styles', 'scripts', 'images', 'video'],
+        ['styles', 'images', 'video'],
         ['connect', 'watch'],
     done);
 });
@@ -236,7 +236,7 @@ gulp.task('default', function(done) {
 gulp.task('build', function(done) {
     runSequence(
         'clean',
-        ['styles', 'scripts', 'images', 'video'],
+        ['styles', 'images', 'video'],
     done);
 });
 
