@@ -3,7 +3,7 @@
 The Small Web Starter is made for building quick prototypes and small websites.
 
 ## Short
-This startkit includes all you need to start a simple prototype or a very small website. A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css and **Bower** will manage your vendors.
+The Small Web Starter includes all you need to start a simple prototype or a very small website. A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css and **Bower** will manage your vendors.
 
 
 ## Getting started
@@ -21,10 +21,10 @@ Use the **.bowerrc** to specify where your vendors will be placed. Gulp will als
 Now do `bower install` in your terminal at the root of the project folder to install your vendors.
 
 ### Styles
-The starter-kit also includes a basic styles setup. It has a custom normalize, a basic folder structure, some basic typography styles and some default config-files to get you started.
+The Small Web Starter also includes a basic styles setup. It has a custom normalize, a basic folder structure, some basic typography styles and some default config-files to get you started.
 
 ### Index.html
-The index.html is the base-html file of the starter-kit. It includes the bare-minimal to get you going.
+The index.html is the base-html file of the Small Web Starter. It includes the bare-minimal to get you going.
 
 ### Editor config
 There is also a **.editorconfig** file present to ensure code-consistency throughout your files.

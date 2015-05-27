@@ -3,7 +3,7 @@
 The Medium Web Starter is made for building medium scaled websites.
 
 ## Short
-This startkit includes all you need to start a simple prototype or a very small website. A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css, **Bundler** will manage your ruby-gems, **Bower** will manage your vendors and hologram will provide your **styleguide**.
+The Medium Web Starter includes all you need to start a medium scaled website. A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css, **Bundler** will manage your ruby-gems, **Bower** will manage your vendors and hologram will provide your **styleguide**.
 
 
 ## Getting started
@@ -32,7 +32,7 @@ The Medium Web Starter also includes a extended styles setup. It has a custom no
 Hologram is used to create our styleguide. You can find the styleguide at `/dist/styleguide/index.html`. The styleguides content is written in the scss files themself.
 
 ### Index.html
-The index.html is the base-html file of the starter-kit. It includes the bare-minimal to get you going.
+The index.html is the base-html file of the Medium Web Starter. It includes the bare-minimal to get you going.
 
 ### Editor config
 There is also a **.editorconfig** file present to ensure code-consistency throughout your files.
