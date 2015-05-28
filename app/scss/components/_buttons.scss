@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+
+/* General
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 1em 2em;
+
+    color: $black;
+    text-decoration: none;
+
+    border: 1px solid $grey;
+
+    transition: border .3s ease, box-shadow .3s ease;
+
+    &:hover, &:focus {
+        border-color: $black;
+        box-shadow: 0 2px 1px rgba(78, 104, 115, .2);
+    }
+
+    &:active {
+        transition: none;
+        border-color: $grey;
+        box-shadow: none;
+    }
+}

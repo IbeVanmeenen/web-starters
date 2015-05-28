@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Container
+   ========================================================================== */
+
+
+/* General
+   ========================================================================== */
+.section-title {
+    position: relative;
+
+    margin: 8rem 0 0;
+    padding: 2em 2em;
+
+    font-size: 2rem;
+    text-align: center;
+
+    border-top: 1px solid $grey;
+
+    @media (min-width: $screen-md) {
+        font-size: 2.5rem;
+    }
+
+    &:after {
+        content: '';
+
+        position: absolute;
+        bottom: 1.4em;
+        left: calc(50% - 1rem);
+
+        display: block;
+        width: 2rem;
+        height: .2rem;
+
+        background: $grey;
+    }
+}
