@@ -7,6 +7,7 @@
    Never add styles directly to this file
    ========================================================================== */
 
+
 /* Config
    ========================================================================== */
 @import "config/config";
@@ -17,9 +18,11 @@
 @import "base/base";
 
 
-/* General
+/* Typography
    ========================================================================== */
-@import "general/typography";
+@import "typography/base",
+        "typography/bodycopy",
+        "typography/headings";
 
 
 /* Components
