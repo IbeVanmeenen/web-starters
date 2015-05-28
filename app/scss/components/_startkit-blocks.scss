@@ -44,5 +44,8 @@
     margin: 2rem 0;
 
     color: $white;
-    text-align: left;
+
+    @media (min-width: $screen-lg) {
+        text-align: center;
+    }
 }
