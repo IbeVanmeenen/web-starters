@@ -75,12 +75,12 @@ h1 {
     color: $black;
 
     @media(min-width: $screen-md) {
-        font-size: 5rem;
+        font-size: 3rem;
     }
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 
     @media(min-width: $screen-md) {
         font-size: 2rem;
@@ -88,19 +88,19 @@ h2 {
 }
 
 h3 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: $black;
 
     @media(min-width: $screen-md) {
-        font-size: 1.3rem;
+        font-size: 1.7rem;
     }
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: $grey;
 
     @media(min-width: $screen-md) {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 }
