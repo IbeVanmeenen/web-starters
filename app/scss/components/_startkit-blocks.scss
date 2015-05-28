@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Startkit Blocks
+   ========================================================================== */
+
+
+/* General
+   ========================================================================== */
+.startkit-blocks {
+
+    @media (min-width: $screen-lg) {
+        display: flex;
+    }
+}
+
+
+/* Blocks
+   ========================================================================== */
+.startkit-blocks__block {
+    margin: 2rem 1rem;
+    padding: 1.5em;
+
+    background: #7696A3;
+    color: $white;
+
+    @media (min-width: $screen-lg) {
+        flex: 1;
+
+        margin: 2rem 1rem;
+    }
+}
+
+.startkit-blocks__block--middle {
+    background: $black;
+}
+
+.startkit-blocks__block--nono {
+    background: $grey;
+}
+
+
+/* Title
+   ========================================================================== */
+.startkit-blocks__block__title {
+    margin: 2rem 0;
+
+    color: $white;
+    text-align: left;
+}

@@ -14,16 +14,33 @@
 
     border: 1px solid $grey;
 
-    transition: border .3s ease, box-shadow .3s ease;
+    transition: border .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease;
 
     &:hover, &:focus {
         border-color: $black;
-        box-shadow: 0 2px 1px rgba(78, 104, 115, .2);
+        background: $black;
+        color: $white;
+        box-shadow: 0 3px 2px rgba(78, 104, 115, .4);
     }
 
     &:active {
         transition: none;
         border-color: $grey;
         box-shadow: none;
+    }
+}
+
+.btn--white {
+    color: $white;
+    border-color: $white;
+
+    &:hover, &:focus {
+        border-color: $white;
+        background: $white;
+        color: $black;
+    }
+
+    &:active {
+        border-color: $white;
     }
 }
