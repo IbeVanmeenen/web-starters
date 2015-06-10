@@ -36,6 +36,9 @@ var del = require('del');
 // Load the notifier.
 var Notifier = require('node-notifier');
 
+// Chalk for the errorlogger
+var chalk = require('chalk');
+
 
 
 /* Load config (Credits @DaanPoron)
@@ -58,15 +61,17 @@ config = JSON.parse(config);
 
 
 
-/* Errorhandling (Credits @JensGyslink)
+/* Errorhandling (Credits @JensGyselinck)
    ========================================================================== */
-var errorLogger = function(headerMessage,errorMessage) {
-    var header = headerLines(headerMessage);
-        header += '\n             '+ headerMessage +'\n           ';
-        header += headerLines(headerMessage);
-        header += '\r\n \r\n';
+var errorLogger = function(headerMessage, errorMessage) {
+    var i = 0,
+        boxLines = '';
 
-    plugins.util.log(plugins.util.colors.red(header) + '             ' + errorMessage + '\r\n')
+    for (; i < headerMessage.length + 4; i ++) {
+        boxLines += '=';
+    }
+
+    plugins.util.log('\n' + chalk.red(boxLines + '\n# ') + headerMessage + chalk.red(' #\n' + boxLines) + '\n ' + chalk.blue(errorMessage) + '\n');
 
     if (config.showErrorNotifications) {
         var notifier = new Notifier();
@@ -77,17 +82,7 @@ var errorLogger = function(headerMessage,errorMessage) {
             'contentImage':  __dirname + "/gulp_error.jpg"
         });
     }
-}
-
-var headerLines = function(message){
-    var lines = '';
-
-    for (var i = 0; i< (message.length + 4); i++) {
-        lines += '-';
-    }
-
-    return lines;
-}
+};
 
 
 
