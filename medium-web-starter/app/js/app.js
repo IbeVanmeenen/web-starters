@@ -19,7 +19,7 @@ startkit.app = function(undefined) {
     }();
 };
 
-var ready = function (fn) {
+var ready = function(fn) {
     // Sanity check
     if (typeof(fn) !== 'function') return;
 
