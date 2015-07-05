@@ -32,7 +32,6 @@ var ready = function (fn) {
     document.addEventListener('DOMContentLoaded', fn, false);
 };
 
-// Example
 ready(function() {
     startkit.app();
 });
