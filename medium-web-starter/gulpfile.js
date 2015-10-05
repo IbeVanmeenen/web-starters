@@ -70,16 +70,6 @@ var errorLogger = function(headerMessage, errorMessage) {
     }
 
     plugins.util.log('\n' + chalk.red(boxLines + '\n# ') + headerMessage + chalk.red(' #\n' + boxLines) + '\n ' + chalk.blue(errorMessage) + '\n');
-
-    if (config.showErrorNotifications) {
-        var notifier = new Notifier();
-
-        notifier.notify({
-            'title': headerMessage,
-            'message': errorMessage,
-            'contentImage':  __dirname + "/gulp_error.jpg"
-        });
-    }
 };
 
 
@@ -90,10 +80,7 @@ var errorLogger = function(headerMessage, errorMessage) {
 gulp.task('styles', function() {
     return gulp.src(config.scss)
         // Sass
-        .pipe(plugins.sass())
-        .on('error', function(err) {
-            errorLogger('SASS Compilation Error', err.message);
-        })
+        .pipe(plugins.sass().on('error', plugins.sass.logError))
 
         // Combine Media Queries
         .pipe(plugins.combineMq())
@@ -142,6 +129,29 @@ gulp.task('scripts', function() {
         .pipe(plugins.size({
             title: 'js'
         }));
+});
+
+
+// JS - Other
+gulp.task('other-scripts', function() {
+	return gulp.src(config.otherJs)
+		// Uglify
+		.pipe(plugins.uglify({
+			mangle: {
+				except: ['jQuery']
+			}
+		}))
+		.on('error', function(err) {
+			errorLogger('Javascript Error', err.message);
+		})
+
+		// Set destination
+		.pipe(gulp.dest(config.dist.js))
+
+		// Show total size of js
+		.pipe(plugins.size({
+			title: 'js'
+		}));
 });
 
 
@@ -232,7 +242,7 @@ gulp.task('connect', function() {
 gulp.task('default', function(done) {
     runSequence(
         'clean',
-        ['styles', 'scripts', 'images', 'video'],
+        ['styles', 'scripts', 'other-scripts', 'images', 'video'],
         'styleguide',
         ['connect', 'watch'],
     done);
@@ -243,7 +253,7 @@ gulp.task('default', function(done) {
 gulp.task('build', function(done) {
     runSequence(
         'clean',
-        ['styles', 'scripts', 'images', 'video'],
+        ['styles', 'scripts', 'other-scripts', 'images', 'video'],
         'styleguide',
     done);
 });
@@ -255,4 +265,13 @@ gulp.task('biuld', function(done) {
 });
 gulp.task('buil', function(done) {
     gulp.start('build');
+});
+gulp.task('biuld', function(done) {
+	gulp.start('build');
+});
+gulp.task('buil', function(done) {
+	gulp.start('build');
+});
+gulp.task('buld', function(done) {
+	gulp.start('build');
 });

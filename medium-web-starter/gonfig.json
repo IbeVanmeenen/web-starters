@@ -9,7 +9,10 @@
     "video": "<=resourcesPath>video/**/*.{webm,mp4}",
     "js": [
         "<=bowerComponentsPath>velocity/velocity.min.js",
-        "<=resourcesPath>js/**/*.js"
+        "<=resourcesPath>js/*.js"
+    ],
+    "otherJs": [
+        "<=resourcesPath>js/other/*.js"
     ],
 
     "dist": {
@@ -20,7 +23,8 @@
     },
 
     "browserSupport": [
-        "last 2 versions"
+        "last 2 versions",
+        "ie >= 9"
     ],
 
     "liveReloadFiles": [
@@ -30,6 +34,5 @@
         "<=distPath>styleguide/css/style.min.css"
     ],
 
-    "styleguideFolder": "<=resourcesPath>styleguide",
-    "showErrorNotifications": "false"
+    "styleguideFolder": "<=resourcesPath>styleguide"
 }
