@@ -33,9 +33,6 @@ var runSequence = require('run-sequence');
 // Del
 var del = require('del');
 
-// Load the notifier.
-var Notifier = require('node-notifier');
-
 // Chalk for the errorlogger
 var chalk = require('chalk');
 
