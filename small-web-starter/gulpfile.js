@@ -79,7 +79,10 @@ var errorLogger = function(headerMessage, errorMessage) {
 gulp.task('styles', function() {
     return gulp.src(config.scss)
         // Sass
-        .pipe(plugins.sass().on('error', plugins.sass.logError))
+        .pipe(plugins.sass()).on('error', function(err) {
+            errorLogger('Styles Error', err);
+            this.emit('end');
+        })
 
         // Combine Media Queries
         .pipe(plugins.combineMq())
@@ -113,9 +116,9 @@ gulp.task('scripts', function() {
             mangle: {
                 except: ['jQuery']
             }
-        }))
-        .on('error', function(err) {
-            errorLogger('Javascript Error', err.message);
+        })).on('error', function(err) {
+            errorLogger('Javascript Error', err);
+            this.emit('end');
         })
 
         // Concat
@@ -133,24 +136,24 @@ gulp.task('scripts', function() {
 
 // JS - Other
 gulp.task('other-scripts', function() {
-	return gulp.src(config.otherJs)
-		// Uglify
-		.pipe(plugins.uglify({
-			mangle: {
-				except: ['jQuery']
-			}
-		}))
-		.on('error', function(err) {
-			errorLogger('Javascript Error', err.message);
-		})
+        return gulp.src(config.otherJs)
+        // Uglify
+        .pipe(plugins.uglify({
+            mangle: {
+                except: ['jQuery']
+            }
+        })).on('error', function(err) {
+            errorLogger('Javascript Error', err);
+            this.emit('end');
+        })
 
-		// Set destination
-		.pipe(gulp.dest(config.dist.js))
+        // Set destination
+        .pipe(gulp.dest(config.dist.js))
 
-		// Show total size of js
-		.pipe(plugins.size({
-			title: 'js'
-		}));
+        // Show total size of js
+        .pipe(plugins.size({
+            title: 'js - other'
+        }));
 });
 
 
@@ -251,11 +254,11 @@ gulp.task('buil', function(done) {
     gulp.start('build');
 });
 gulp.task('biuld', function(done) {
-	gulp.start('build');
+    gulp.start('build');
 });
 gulp.task('buil', function(done) {
-	gulp.start('build');
+    gulp.start('build');
 });
 gulp.task('buld', function(done) {
-	gulp.start('build');
+    gulp.start('build');
 });
