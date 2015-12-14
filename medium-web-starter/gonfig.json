@@ -9,6 +9,7 @@
     "video": "<=resourcesPath>video/**/*.{webm,mp4}",
     "js": [
         "<=bowerComponentsPath>velocity/velocity.min.js",
+        "<=resourcesPath>js/components/*.js",
         "<=resourcesPath>js/*.js"
     ],
     "otherJs": [
@@ -29,10 +30,6 @@
 
     "liveReloadFiles": [
         "<=distPath>css/style.min.css",
-        "app/styleguide/doc_assets/static/hologram--startkit.css",
-        "<=distPath>js/*.js",
-        "<=distPath>styleguide/css/style.min.css"
-    ],
-
-    "styleguideFolder": "<=resourcesPath>styleguide"
+        "<=distPath>js/*.js"
+    ]
 }

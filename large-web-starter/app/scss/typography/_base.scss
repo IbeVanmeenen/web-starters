@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Base Typography
+   ========================================================================== */
+
+
+* {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+}
+
+html, body {
+    font-family: $font-family--base;
+    font-size: $text-size--base;
+    line-height: $line-height--base;
+    color: $black;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}

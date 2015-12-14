@@ -13,20 +13,3 @@ a[href]:not([class]) {
         color: $link-color--hover;
     }
 }
-
-
-
-
-/*doc
----
-title: Links
-name: 02_links
-category: Blocks
----
-
-```html_example
-<p>
-    <a href="#">Link</a>
-</p>
-```
-*/

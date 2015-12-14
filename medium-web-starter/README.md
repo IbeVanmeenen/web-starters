@@ -3,15 +3,10 @@
 The Medium Web Starter is made for building medium scaled websites.
 
 ## Short
-The Medium Web Starter includes all you need to start a medium scaled website. A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css, **Bundler** will manage your ruby-gems, **Bower** will manage your vendors and hologram will provide your **styleguide**.
+The Medium Web Starter includes all you need to start a medium scaled website. A barebone **index.html** is provided, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css and **Bower** will manage your vendors.
 
 
 ## Getting started
-
-### Bundler
-Bundler will manage your ruby-gems and install them project-based. This is nessesary for **hologram**, a ruby-gem that we will use to build our styleguide.
-
-To get started, make sure you have Bundler installed and run `bundle install` to install your gems.
 
 ### Gulp
 Gulp will automate all your frontend tasks for you. It will read out the **gonfig.json** file to get things started. It takes care of all your assest and optimizes them all. Take a look at **gulpfile.js** to know what is happening. Every task is well documented.
@@ -27,9 +22,7 @@ Now do `bower install` in your terminal at the root of the project folder to ins
 
 ### Styles
 The Medium Web Starter also includes a extended styles setup. It has a custom normalize, a basic folder structure, some basic typography styles, some default components and some default config-files to get you started.
-
-### Styleguide
-Hologram is used to create our styleguide. You can find the styleguide at `/dist/styleguide/index.html`. The styleguides content is written in the scss files themself.
+The new Bootstrap is also used, providing a default scaffolding and a basic grid.
 
 ### Index.html
 The index.html is the base-html file of the Medium Web Starter. It includes the bare-minimal to get you going.

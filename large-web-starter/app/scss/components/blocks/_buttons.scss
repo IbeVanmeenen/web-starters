@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Blocks - Buttons
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    margin: 0;
+    padding: 1em;
+
+    background: $grey;
+    border: 1px solid darken($grey, 2%);
+    -webkit-appearance: none;
+
+    color: $black;
+    font-size: .875rem;
+    font-weight: bold;
+    line-height: 1;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+
+    &:active, &:focus {
+        outline: 0;
+    }
+}
+
+
+/* Hover
+   ========================================================================== */
+.btn--hover {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+    transition: box-shadow .2s ease, background .3s ease, border-color .3s ease;
+
+    &:hover, &:focus {
+        box-shadow: 0 .1em .2em rgba(0, 0, 0, .5);
+        outline: 0;
+    }
+
+    &:active {
+        transition: none;
+        box-shadow: none;
+        outline: 0;
+    }
+}
+
+
+/* Types
+   ========================================================================== */
+.btn--primary {
+    background: $blue;
+    border-color: darken($blue, 5%);
+    color: $white;
+}
+
+
+
+
+/*doc
+---
+title: Buttons
+name: 01_buttons
+category: Blocks
+---
+<strong>Default</strong>
+
+```html_example
+<p>
+    <button type="button" class="btn">Button</button>
+</p>
+```
+
+<strong>Hover</strong>
+
+```html_example
+<p>
+    <button type="button" class="btn btn--hover">Hover Button</button>
+</p>
+```
+
+<strong>Types</strong>
+
+```html_example
+<p>
+    <button type="button" class="btn btn--hover btn--primary">Primary Button</button>
+</p>
+```
+
+*/

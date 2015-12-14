@@ -65,38 +65,3 @@
     border-color: darken($blue, 5%);
     color: $white;
 }
-
-
-
-
-/*doc
----
-title: Buttons
-name: 01_buttons
-category: Blocks
----
-<strong>Default</strong>
-
-```html_example
-<p>
-    <button type="button" class="btn">Button</button>
-</p>
-```
-
-<strong>Hover</strong>
-
-```html_example
-<p>
-    <button type="button" class="btn btn--hover">Hover Button</button>
-</p>
-```
-
-<strong>Types</strong>
-
-```html_example
-<p>
-    <button type="button" class="btn btn--hover btn--primary">Primary Button</button>
-</p>
-```
-
-*/

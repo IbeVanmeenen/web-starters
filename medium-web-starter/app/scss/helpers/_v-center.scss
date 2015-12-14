@@ -1,0 +1,10 @@
+/* ==========================================================================
+   Vertical center
+   ========================================================================== */
+
+.v-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+}

@@ -1,11 +1,12 @@
 ## Web Starters
 
-> Some startkits for building quick prototypes or websites. Depending on what you want to achieve, a different startkit is needed.
+> Some startkits for building quick prototypes or websites. Depending on what you want to achieve, a different startkit is recommended.
 
 
 ### Startkits
-- For quick prototypes and very small websites use the [Small Web Starter](small-web-starter/).
-- For larger websites use the [Medium Web Starter](medium-web-starter/).
+- For quick prototypes and very small websites (think onepagers) use the [Small Web Starter](small-web-starter/).
+- For medium scaled website use the [Medium Web Starter](medium-web-starter/).
+- Have a big project ahead? Start with the [Large Web Starter](large-web-starter/).
 
 That's it. Go and create, become a Master Builder.
 
