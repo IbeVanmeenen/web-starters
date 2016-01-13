@@ -2,8 +2,6 @@
    Startkit - Component
    ========================================================================== */
 
-var startkit = startkit || {};
-
 startkit.component = function(undefined) {
 
     var exports = this.component;

@@ -2,8 +2,6 @@
    Startkit
    ========================================================================== */
 
-var startkit = startkit || {};
-
 startkit.app = function(undefined) {
 
     var exports = this.app;
@@ -74,5 +72,5 @@ ready(function() {
 
 
 window.onload = function() {
-    scintillate.app.onload();
+    startkit.app.onload();
 };

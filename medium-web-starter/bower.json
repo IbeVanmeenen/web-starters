@@ -1,8 +1,8 @@
 {
-    "name": "LotusOpKamp2016",
+    "name": "startkit",
     "version": "1.0.0",
     "dependencies": {
         "velocity": "latest",
-        "bootstrap": "4.0.0-alpha"
+        "bootstrap": "4.0.0-alpha.2"
     }
 }

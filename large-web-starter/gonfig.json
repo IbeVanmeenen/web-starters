@@ -9,8 +9,9 @@
     "video": "<=resourcesPath>video/**/*.{webm,mp4}",
     "js": [
         "<=bowerComponentsPath>velocity/velocity.min.js",
+        "<=resourcesPath>js/_scope.js",
         "<=resourcesPath>js/components/*.js",
-        "<=resourcesPath>js/*.js"
+        "<=resourcesPath>js/app.js"
     ],
     "otherJs": [
         "<=resourcesPath>js/other/*.js"

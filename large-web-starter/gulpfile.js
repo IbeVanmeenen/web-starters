@@ -209,7 +209,7 @@ gulp.task('styleguide', function() {
 
 // Clean
 gulp.task('clean', function(done) {
-    del([distPath + '**'], done);
+    return del([distPath + '**']);
 });
 
 
