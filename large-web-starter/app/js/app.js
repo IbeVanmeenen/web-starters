@@ -2,8 +2,6 @@
    Startkit
    ========================================================================== */
 
-var startkit = startkit || {};
-
 startkit.app = function(undefined) {
 
     var exports = this.app;

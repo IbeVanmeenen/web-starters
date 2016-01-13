@@ -91,7 +91,7 @@ gulp.task('styles', function() {
         .pipe(plugins.autoprefixer(config.browserSupport))
 
         // Minify output
-        .pipe(plugins.minifyCss())
+        .pipe(plugins.cssnano())
 
         // Rename the file to respect naming covention.
         .pipe(plugins.rename(function(path) {
@@ -197,7 +197,7 @@ gulp.task('video', function() {
 
 // Clean
 gulp.task('clean', function(done) {
-    del([distPath + '**'], done);
+    return del([distPath + '**']);
 });
 
 
