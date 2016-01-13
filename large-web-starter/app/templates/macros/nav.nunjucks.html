@@ -1,0 +1,10 @@
+{% macro active(activePage='home') %}
+    <nav role="navigation" class="main-nav">
+        <a href="#" class="main-nav__item{%if activePage == 'home' %} main-nav__item--active{% endif %}">
+            Home
+        </a>
+        <a href="#" class="main-nav__item{%if activePage == 'contact' %} main-nav__item--active{% endif %}">
+            Contact
+        </a>
+    </nav>
+{% endmacro %}

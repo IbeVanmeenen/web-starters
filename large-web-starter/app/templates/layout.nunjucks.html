@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Startkit by @IbeVanmeenen">
 
-    <link rel="stylesheet" href="dist/css/style.min.css">
+    <link rel="stylesheet" href="/dist/css/style.min.css">
 
     <title>Startkit</title>
 </head>
 <body>
-    <main role="main"></main>
+    {% block header %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
 
-    <script src="dist/js/footer.min.js"></script>
+    <script src="/dist/js/footer.min.js"></script>
 </body>
 </html>

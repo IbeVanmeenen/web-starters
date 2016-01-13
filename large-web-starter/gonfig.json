@@ -17,16 +17,23 @@
         "<=resourcesPath>js/other/*.js"
     ],
 
+    "templates": {
+        "baseFolder": "<=resourcesPath>templates/",
+        "pages": "<=resourcesPath>templates/pages/**/*.html",
+        "watchFiles": "<=resourcesPath>templates/**/*.html"
+    },
+
     "dist": {
         "css": "<=distPath>css",
         "js": "<=distPath>js",
         "img": "<=distPath>img",
-        "video": "<=distPath>video"
+        "video": "<=distPath>video",
+        "templates": "<=distPath>"
     },
 
     "browserSupport": [
         "last 2 versions",
-        "ie >= 9"
+        "ie 9-11"
     ],
 
     "liveReloadFiles": [

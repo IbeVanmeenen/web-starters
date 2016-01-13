@@ -195,6 +195,30 @@ gulp.task('video', function() {
 });
 
 
+// Templates
+gulp.task('templates', function() {
+    plugins.nunjucksRender.nunjucks.configure([config.templates.baseFolder], {watch: false});
+
+    return gulp.src(config.templates.pages)
+        // Render
+        .pipe(plugins.nunjucksRender())
+
+        // Minify html
+        .pipe(plugins.htmlmin({
+            collapseWhitespace: true
+        }))
+
+        // Rename
+        .pipe(plugins.rename(function(path) {
+            path.basename = path.basename.split('.nunjucks')[0];
+            path.extname = ".html"
+        }))
+
+        // Set destination
+        .pipe(gulp.dest(config.dist.templates))
+});
+
+
 // styleguide
 gulp.task('styleguide', function() {
     return gulp.src(config.styleguideFolder, {read: false})
@@ -228,6 +252,7 @@ gulp.task('watch', function() {
     gulp.watch(config.js, ['scripts']);
     gulp.watch(config.img, ['images']);
     gulp.watch(config.video, ['video']);
+    gulp.watch(config.templates.watchFiles, ['templates']);
 });
 
 
@@ -244,7 +269,7 @@ gulp.task('connect', function() {
 gulp.task('default', function(done) {
     runSequence(
         'clean',
-        ['styles', 'scripts', 'other-scripts', 'images', 'video'],
+        ['styles', 'scripts', 'other-scripts', 'images', 'video', 'templates'],
         'styleguide',
         ['connect', 'watch'],
     done);
@@ -255,7 +280,7 @@ gulp.task('default', function(done) {
 gulp.task('build', function(done) {
     runSequence(
         'clean',
-        ['styles', 'scripts', 'other-scripts', 'images', 'video'],
+        ['styles', 'scripts', 'other-scripts', 'images', 'video', 'templates'],
         'styleguide',
     done);
 });
