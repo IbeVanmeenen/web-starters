@@ -25,49 +25,59 @@
         .appleFooter a {color:#B3B3B3; text-decoration: underline;}
 
         /* MOBILE STYLES */
-        @media screen and (max-width: 525px) {
+        @media screen and (max-width: 625px) {
 
             /* ALLOWS FOR FLUID TABLES */
             table[class="wrapper"]{
-              width:100% !important;
+                width:100% !important;
             }
 
             /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
             td[class="mobile-hide"]{
-              display:none;}
+                display:none;
+            }
 
             img[class="mobile-hide"]{
-              display: none !important;
+                display: none !important;
             }
 
             img[class="img-max"]{
-              max-width: 100% !important;
-              width: 100% !important;
-              height:auto !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                height:auto !important;
             }
 
             /* FULL-WIDTH TABLES */
             table[class="responsive-table"]{
-              width:100%!important;
+                width:100%!important;
             }
 
             /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
-            td[class="padding"]{
-              padding: 10px 5% 15px 5% !important;
-            }
-
-            td[class="padding-copy"]{
-              padding: 10px 5% 10px 5% !important;
-              text-align: center;
-            }
-
             td[class="no-padding"]{
-              padding: 0 !important;
+                padding: 0 !important;
+            }
+
+            td[class="line-padding"]{
+                padding: 20px 0 20px 0 !important;
             }
 
             td[class="section-padding"]{
-              padding: 50px 15px 50px 15px !important;
+                padding: 30px 20px 30px 20px !important;
             }
+
+            td[class="mobile-column-padding"]{
+                padding: 20px 20px 20px 20px !important;
+            }
+
+            td[class="mobile-one-column"]{
+                display: block !important;
+                width: 100% !important;
+            }
+
+            td[class="footer"]{
+                padding: 50px 0 50px 0 !important;
+            }
+
 
             /* ADJUST BUTTONS ON MOBILE */
             td[class="mobile-wrapper"]{
@@ -85,7 +95,6 @@
                 border: 0 !important;
                 font-size: 16px !important;
             }
-
         }
     </style>
 </head>
@@ -101,7 +110,7 @@
                     Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
                 </div>
                 <div align="center" style="padding: 0px 15px 0px 15px;">
-                    <table border="0" cellpadding="0" cellspacing="0" width="500" class="wrapper">
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="wrapper">
                         <!-- PREHEADER TEXT -->
                         <tr>
                             <td style="font-size: 12px; line-height: 1.6; font-family: Helvetica, Arial, sans-serif; color: #586266; padding: 15px 0px; text-align: center;">
@@ -118,10 +127,10 @@
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td bgcolor="#a5c1af" align="center">
-                <table border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
+                <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
                     <tr>
-                        <td>
-                            <img src="hero.jpg" width="500" height="212" border="0" alt="Insert alt text here" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 16px;" class="img-max">
+                        <td align="center" valign="top" style="padding: 0;">
+                            <img src="hero.jpg" width="600" height="212" border="0" alt="Insert alt text here" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 16px;" class="img-max">
                         </td>
                     </tr>
                 </table>
@@ -132,22 +141,24 @@
     <!-- BLOCK - CONTENT -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-            <td bgcolor="#ffffff" align="center" style="padding: 50px 15px 50px 15px;" class="section-padding">
-                <table border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
+            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0;">
+                <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+
+                    <!-- ONE COLUMN -->
                     <tr>
-                        <td>
+                        <td bgcolor="#ffffff" align="center" valign="top" style="padding: 50px 15px 25px 15px;" class="section-padding">
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td>
                                         <!-- COPY -->
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333;" class="padding-copy">
+                                                <td align="center" valign="top" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333;" class="padding-copy">
                                                     My Awesome Title
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="center" style="padding: 35px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #586266;" class="padding-copy">
+                                                <td align="center" valign="top" style="padding: 35px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #586266;" class="padding-copy">
                                                     Body ipsum dolor sit amet, consectetur adipiscing elit. Sed varius, leo a ullamcorper feugiat, ante purus sodales justo, a faucibus libero lacus a est. Aenean at mollis ipsum.
                                                 </td>
                                             </tr>
@@ -159,13 +170,81 @@
                                         <!-- BULLETPROOF BUTTON -->
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
                                             <tr>
-                                                <td align="center" style="padding: 25px 0 0 0;" class="padding-copy">
+                                                <td align="center" valign="top" style="padding: 25px 0 0 0;" class="padding-copy">
                                                     <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
                                                         <tr>
-                                                            <td align="center">
+                                                            <td align="center" valign="top">
                                                                 <a href="#" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #a5c1af; border-top: 15px solid #a5c1af; border-bottom: 15px solid #a5c1af; border-left: 25px solid #a5c1af; border-right: 25px solid #a5c1af; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;" class="mobile-button">
                                                                     CTA Button
                                                                 </a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- LINE -->
+                    <tr>
+                        <td bgcolor="#ffffff" align="center" valign="top" width="100%" style="padding: 30px 15px 30px 15px;" class="line-padding">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td bgcolor="#eee" align="center" valign="top" style="height: 1px; line-height: 1px; padding: 0; background: #eee;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- TWO COLUMN -->
+                    <tr>
+                        <td bgcolor="#ffffff" align="center" style="padding: 30px 0 70px 0;" class="no-padding">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <!-- TWO COLUMN - COLUMN -->
+                                    <td align="left" valign="top" width="50%" class="mobile-one-column">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td style="padding: 0 15px 0 15px;" class="mobile-column-padding">
+                                                    <!-- COPY -->
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td align="left" valign="top" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #333;">
+                                                                Two Column Block
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left" valign="top" style="padding: 15px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #586266;">
+                                                                Body ipsum dolor sit amet, consectetur adipiscing elit. Sed varius, leo a ullamcorper feugiat, ante purus sodales justo.
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!-- TWO COLUMN - COLUMN -->
+                                    <td align="left" valign="top" width="50%" class="mobile-one-column">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td style="padding: 0 15px 0 15px;" class="mobile-column-padding">
+                                                    <!-- COPY -->
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td align="left" valign="top" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #333;">
+                                                                Two Column Block
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left" valign="top" style="padding: 15px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #586266;">
+                                                                Body ipsum dolor sit amet, consectetur adipiscing elit. Sed varius.
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -185,11 +264,11 @@
     <!-- BLOCK - FOOTER -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-            <td bgcolor="#ffffff" align="center" style="padding: 0 0px 20px;">
+            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 0px 20px;" class="footer">
                 <!-- UNSUBSCRIBE COPY -->
-                <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
+                <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
                     <tr>
-                        <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
+                        <td align="center" valign="top" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
                             <span class="appleFooter" style="color:#B3B3B3;">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             </span>
