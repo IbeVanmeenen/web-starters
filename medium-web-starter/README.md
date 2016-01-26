@@ -2,7 +2,7 @@
 
 The Medium Web Starter includes all you need to start a medium scaled website. Highlights: **Nunjucks** will be used for the templates, **Gulp** will automate all your frontend-tasks, **Scss** will be used to write your css and **Bower** will manage your vendors.
 
----
+
 
 ## Getting started
 
@@ -24,7 +24,7 @@ To get started, run `npm install` in your terminal at the root of the project fo
 
 
 ### Styles
-A extended styles scaffolding is provided and can be found at `app/scss/`. 
+A extended styles scaffolding is provided and can be found at `app/scss/`.
 
 It provides a basic folder structure, a custom normalize, some basic typography styles, some default components and some default config-files to get you started. The new Bootstrap is also used, only used to provide a nice grid system.
 
