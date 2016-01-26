@@ -1,4 +1,6 @@
 {
+    "showErrorNotifications": true,
+
     "vars": {
         "distPath": "dist/",
         "resourcesPath": "app/"
@@ -7,19 +9,22 @@
     "scss": "<=resourcesPath>scss/**/*.scss",
     "img": "<=resourcesPath>img/**/*.{png,jpg,jpeg,gif,svg,webp}",
     "video": "<=resourcesPath>video/**/*.{webm,mp4}",
-    "js": [
-        "<=bowerComponentsPath>velocity/velocity.min.js",
-        "<=resourcesPath>js/*.js"
-    ],
-    "otherJs": [
-        "<=resourcesPath>js/other/*.js"
-    ],
+
+    "js": {
+        "vendors": [
+            "<=bowerComponentsPath>"
+        ],
+        "app": [
+            "<=resourcesPath>js/*.js"
+        ]
+    },
 
     "dist": {
         "css": "<=distPath>css",
         "js": "<=distPath>js",
         "img": "<=distPath>img",
-        "video": "<=distPath>video"
+        "video": "<=distPath>video",
+        "templates": "<=distPath>"
     },
 
     "browserSupport": [
