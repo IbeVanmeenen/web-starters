@@ -1,0 +1,13 @@
+{
+    "undef": true,
+    "unused": false,
+
+    "strict": false,
+    "camelcase": true,
+
+    "browser": true,
+
+    "globals": {
+        "startkit": true
+    }
+}

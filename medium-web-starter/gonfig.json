@@ -1,4 +1,6 @@
 {
+    "showErrorNotifications": true,
+
     "vars": {
         "distPath": "dist/",
         "resourcesPath": "app/"
@@ -7,15 +9,18 @@
     "scss": "<=resourcesPath>scss/**/*.scss",
     "img": "<=resourcesPath>img/**/*.{png,jpg,jpeg,gif,svg,webp}",
     "video": "<=resourcesPath>video/**/*.{webm,mp4}",
-    "js": [
-        "<=bowerComponentsPath>velocity/velocity.min.js",
-        "<=resourcesPath>js/_scope.js",
-        "<=resourcesPath>js/components/*.js",
-        "<=resourcesPath>js/app.js"
-    ],
-    "otherJs": [
-        "<=resourcesPath>js/other/*.js"
-    ],
+
+    "js": {
+        "vendors": [
+            "<=bowerComponentsPath>"
+        ],
+        "app": [
+            "<=resourcesPath>js/_scope.js",
+            "<=resourcesPath>js/components/*.js",
+            "<=resourcesPath>js/app.js"
+        ],
+        "other": "<=resourcesPath>js/other/*.js"
+    },
 
     "templates": {
         "baseFolder": "<=resourcesPath>templates/",

@@ -16,7 +16,9 @@
         "gulp-livereload": "~3.8",
         "gulp-rename": "~1.2",
         "gulp-util": "~3.0",
+        "gulp-if": "~2.0",
         "gulp-connect": "~2.3",
+        "node-notifier": "~4.4",
 
         "gulp-sass": "~2.1",
         "gulp-autoprefixer": "~3.1",
@@ -25,6 +27,9 @@
 
         "gulp-uglify": "~1.5",
         "gulp-concat": "~2.6",
+        "jshint": "~2.9",
+        "jshint-stylish": "~2.1",
+        "gulp-jshint": "~2.0",
 
         "gulp-nunjucks-render": "~1.1",
         "gulp-htmlmin": "~1.3",
