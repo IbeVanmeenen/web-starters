@@ -1,12 +1,13 @@
 {% extends "layout.nunjucks.html" %}
 
+{% block pagetitle %}Startkit{% endblock %}
 
 {% block header %}
     <!-- Header -->
-    {% include 'partials/main/header.nunjucks.html' %}
+    {% include "partials/main/header.nunjucks.html" %}
 
     <!-- Nav -->
-    {% import 'macros/nav.nunjucks.html' as nav %}
+    {% import "macros/nav.nunjucks.html" as nav %}
     {{nav.active('home')}}
 {% endblock %}
 
@@ -18,5 +19,5 @@
 
 {% block footer %}
     <!-- Footer -->
-    {% include 'partials/main/footer.nunjucks.html' %}
+    {% include "partials/main/footer.nunjucks.html" %}
 {% endblock %}

@@ -197,11 +197,18 @@ gulp.task('video', function() {
 
 // Templates
 gulp.task('templates', function() {
-    plugins.nunjucksRender.nunjucks.configure([config.templates.baseFolder], {watch: false});
 
     return gulp.src(config.templates.pages)
         // Render
-        .pipe(plugins.nunjucksRender())
+        .pipe(plugins.nunjucksRender({
+            path: config.templates.baseFolder
+        }))
+
+        // Error catch
+        .on('error', function(err) {
+            errorLogger('Templates Error', err.message, true);
+            this.emit('end');
+        })
 
         // Minify html
         .pipe(plugins.htmlmin({
