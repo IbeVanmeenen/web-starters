@@ -16,7 +16,7 @@ Now run `bower install` in your terminal at the root of the project folder to in
 
 
 ### Gulp
-Gulp will automate all your frontend-tasks for you. It will read out the **gonfig.json** file to get things started. It will take care of all your assest. Be sure to take a look at **gulpfile.js** to know what is going on. Every task is well documented.
+[Gulp](http://gulpjs.com/) will automate all your frontend-tasks for you. It will read out the **gonfig.json** file to get things started. It will take care of all your assest. Be sure to take a look at **gulpfile.js** to know what is going on. Every task is well documented.
 
 Use the **gonfig.json** file to setup your project for gulp. Define your basic paths and specify witch vendors and js you want in your main javascript file.
 
@@ -24,11 +24,10 @@ To get started, run `npm install` in your terminal at the root of the project fo
 
 
 ### Styles
+[Scss](http://sass-lang.com/) is used to write your css. Gulp will take care of the compiling and will store your css in the `dist/css/` folder.
+
 A extended styles scaffolding is provided and can be found at `app/scss/`.
-
 It provides a basic folder structure, a custom normalize, some basic typography styles, some default components and some default config-files to get you started. The new Bootstrap is also used, only used to provide a nice grid system.
-
-Scss is used to write your css. Gulp will take care of the scss-compiling and will store your css in the `dist/css/` folder.
 
 
 ### Javascript
@@ -40,9 +39,8 @@ If you have other javascript files that you want to see optimized, you should pu
 
 
 ### Templating
-A basic scaffolding is provided and can be found at `app/templates/`.
-
 [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) is used as a templating engine. Gulp will take care of the rendering.
+A basic scaffolding is provided and can be found at `app/templates/`.
 
 
 ### Editor config

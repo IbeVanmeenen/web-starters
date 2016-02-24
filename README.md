@@ -1,7 +1,7 @@
 # Web Starters
 
 > Some startkits for building quick prototypes, websites or emails. Depending on what you want to achieve, a different startkit is recommended.
-s
+
 
 ## Startkits
 - For quick prototypes and very small websites (think onepagers) use the [Small Web Starter](small-web-starter/).
