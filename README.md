@@ -4,7 +4,7 @@
 
 
 ## Startkits
-- For quick prototypes and very small websites (think onepagers) use the [Small Web Starter](small-web-starter/).
+- For quick prototypes and very small websites (as in onepagers) use the [Small Web Starter](small-web-starter/).
 - For medium scaled website use the [Medium Web Starter](medium-web-starter/).
 - Have a big project ahead? Start with the [Large Web Starter](large-web-starter/).
 - Need to develop a html-email? Start with the [Email Starter](email-starter/).
