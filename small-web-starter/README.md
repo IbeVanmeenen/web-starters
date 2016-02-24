@@ -37,8 +37,6 @@ A namespaced scaffolding is provided and can be found at `app/js/`.
 
 Gulp will uglify (only when you execute the build-task) and combine all your javascript-files into one single file named **footer.min.js**. It will store this file in the `dist/js/` folder.
 
-If you have other javascript files that you want to see optimized, you should put them in the `app/js/other/` folder. These files will not be combined and will be optimized and stored in the `dist/js/` folder.
-
 
 ### Editor config
 There is also a **.editorconfig** file present to ensure code-consistency throughout your files.
