@@ -15,8 +15,11 @@
             "<=bowerComponentsPath>"
         ],
         "app": [
-            "<=resourcesPath>js/*.js"
-        ]
+            "<=resourcesPath>js/_scope.js",
+            "<=resourcesPath>js/components/*.js",
+            "<=resourcesPath>js/app.js"
+        ],
+        "other": "<=resourcesPath>js/other/*.js"
     },
 
     "dist": {

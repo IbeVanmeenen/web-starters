@@ -241,7 +241,6 @@ gulp.task('watch', function() {
     gulp.watch(config.js.app, ['js-check', 'js']);
     gulp.watch(config.img, ['images']);
     gulp.watch(config.video, ['video']);
-    gulp.watch(config.templates.watchFiles, ['templates']);
 });
 
 

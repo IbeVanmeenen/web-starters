@@ -2,22 +2,56 @@
    Startkit
    ========================================================================== */
 
-var startkit = startkit || {};
-
 startkit.app = function(undefined) {
 
     var exports = this.app;
 
-    // Public function
-    exports.publicFunction = function() {
-        // Public function
+
+    // Scroll
+    var appScroll = function() {
+        // Put functions in the '_update' function :-)
+        var _onScroll, _requestTick, _update,
+            latestKnownScrollY = 0,
+            ticking = false;
+
+        _onScroll = function() {
+            latestKnownScrollY = window.pageYOffset;
+            _requestTick();
+        };
+
+        _requestTick = function() {
+            if (!ticking) {
+                window.requestAnimationFrame(_update);
+            }
+            ticking = true;
+        };
+
+        _update = function() {
+            ticking = false;
+            var currentScrollY = latestKnownScrollY;
+
+            // startkit.component.updateScroll(currentScrollY);
+        };
+
+        // scroll mousewheel wheel
+        window.onscroll = function(e) {
+            _onScroll();
+        };
     };
+
+
+    // On load
+    exports.onload = function() {
+
+    };
+
 
     // Init
     var init = function() {
-        // Init (self-executing function)
+        startkit.component();
     }();
 };
+
 
 var ready = function(fn) {
     // Sanity check
@@ -35,3 +69,8 @@ var ready = function(fn) {
 ready(function() {
     startkit.app();
 });
+
+
+window.onload = function() {
+    startkit.app.onload();
+};

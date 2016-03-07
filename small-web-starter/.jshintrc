@@ -8,6 +8,8 @@
     "browser": true,
 
     "globals": {
-        "startkit": true
+        "startkit": true,
+        "console": true,
+        "Promise": true
     }
 }
