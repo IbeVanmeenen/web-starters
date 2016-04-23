@@ -307,7 +307,7 @@ gulp.task('watch', function() {
 // Connect
 gulp.task('connect', function() {
     plugins.connect.server({
-        root: __dirname,
+        root: __dirname + '/dist/',
         livereload: true
     });
 });

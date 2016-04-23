@@ -29,10 +29,10 @@
     },
 
     "dist": {
-        "css": "<=distPath>css",
-        "js": "<=distPath>js",
-        "img": "<=distPath>img",
-        "video": "<=distPath>video",
+        "css": "<=distPath>assets/css",
+        "js": "<=distPath>assets/js",
+        "img": "<=distPath>assets/img",
+        "video": "<=distPath>assets/video",
         "templates": "<=distPath>"
     },
 
