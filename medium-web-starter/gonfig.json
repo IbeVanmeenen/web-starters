@@ -42,7 +42,7 @@
     ],
 
     "liveReloadFiles": [
-        "<=distPath>css/style.min.css",
-        "<=distPath>js/*.js"
+        "<=distPath>assets/css/style.min.css",
+        "<=distPath>assets/js/*.js"
     ]
 }
