@@ -135,6 +135,11 @@ gulp.task('styles', function() {
 // JS
 gulp.task('js', function() {
     return gulp.src(config.js.vendors.concat(config.js.app))
+        // Remove console logs (only on build)
+        .pipe(plugins.if(isBuild,
+            plugins.stripDebug()
+        ))
+
         // Uglify (only on build)
         .pipe(plugins.if(isBuild,
             plugins.uglify({
@@ -166,6 +171,11 @@ gulp.task('js', function() {
 // JS - Other
 gulp.task('other-js', function() {
     return gulp.src(config.js.other)
+        // Remove console logs (only on build)
+        .pipe(plugins.if(isBuild,
+            plugins.stripDebug()
+        ))
+
         // Uglify (only on build)
         .pipe(plugins.if(isBuild,
             plugins.uglify({
