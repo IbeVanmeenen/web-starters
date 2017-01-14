@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Scaffolding - Grid
+   ========================================================================== */
+
+/* Container
+   ========================================================================== */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:  ($sc-grid-gutter-width-base / 2);
+    padding-right: ($sc-grid-gutter-width-base / 2);
+
+    @each $breakpoint, $container-max-width in $sc-container-max-widths {
+
+        @include media-breakpoint-up($breakpoint, $sc-grid-breakpoints) {
+            width: $container-max-width;
+            max-width: 100%;
+        }
+    }
+}
+
+
+
+/* Row
+   ========================================================================== */
+.row {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -webkit-flex-wrap: wrap;
+
+    @each $breakpoint in map-keys($sc-grid-gutter-widths) {
+
+        @include media-breakpoint-up($breakpoint) {
+            $gutter: map-get($sc-grid-gutter-widths, $breakpoint);
+
+            margin-left: ($gutter / -2);
+            margin-right: ($gutter / -2);
+        }
+    }
+}
+
+
+
+/* Columns
+   ========================================================================== */
+// Base
+.col {
+    position: relative;
+
+    flex-grow: 1;
+    flex-basis: 100%;
+
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1px;
+
+    @each $breakpoint in map-keys($sc-grid-gutter-widths) {
+
+        @include media-breakpoint-up($breakpoint) {
+            $gutter: map-get($sc-grid-gutter-widths, $breakpoint);
+
+            padding-left:  ($gutter / 2);
+            padding-right: ($gutter / 2);
+        }
+    }
+}
+
+
+// Sizes
+@each $breakpoint in map-keys($sc-grid-breakpoints) {
+
+    @include media-breakpoint-up($breakpoint, $sc-grid-breakpoints) {
+
+        @for $i from 1 through $sc-grid-columns-count {
+            // Col
+            .col--#{$breakpoint}-#{$i} {
+                flex: 0 0 percentage($i / $sc-grid-columns-count);
+
+                width: percentage($i / $sc-grid-columns-count);
+                max-width: percentage($i / $sc-grid-columns-count);
+            }
+
+            // Offset
+            .col--offset-#{$breakpoint}-#{$i} {
+                margin-left: percentage($i / $sc-grid-columns-count);
+            }
+        }
+    }
+}
+
+
+// Spacings
+.col--md-padded {
+
+    @include media-breakpoint-up(md) {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+}

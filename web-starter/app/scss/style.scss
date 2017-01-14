@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Style
+
+   This file is exclusively intended for setting up imports
+   Never add styles directly to this file
+   ========================================================================== */
+
+
+/* Config
+   ========================================================================== */
+@import "config/config";
+
+
+/* Base
+   ========================================================================== */
+@import "base/normalize";
+
+
+/* Base
+   ========================================================================== */
+@import "base/scaffolding/scaffolding";
+
+
+/* Typography
+   ========================================================================== */
+@import "typography/base",
+        "typography/bodycopy",
+        "typography/headings";
+
+
+/* Components
+   ========================================================================== */
+@import "components/components";
