@@ -4,73 +4,60 @@
    Gulpfile
 
    Development-tasks:
-   - gulp (=== build + watch)
+   - gulp (default)
    - gulp build
-   - gulp watch
    ========================================================================== */
 
 
-/* Require
+/* Imports
    ========================================================================== */
-// Require Gulp
-var gulp = require('gulp');
+import fs from 'fs';
+import del from 'del';
+import path from 'path';
 
-// Load Gulp plugins
-var plugins = require('gulp-load-plugins')();
+import gulp from 'gulp';
+import chalk from 'chalk';
+import notifier from 'node-notifier';
+import runSequence from 'run-sequence';
+import jshintStylish from 'jshint-stylish';
+import loadPlugins from 'gulp-load-plugins';
 
-// File System
-var fs = require('fs');
 
-// Path
-var path = require('path');
 
-// Lodash
-var _ = require('lodash')
-
-// Load sequence
-var runSequence = require('run-sequence');
-
-// Del
-var del = require('del');
-
-// Chalk for the errorlogger
-var chalk = require('chalk');
-
-// Stylish JS-hint reporter
-var jshintStylish = require('jshint-stylish');
-
-// Load the notifier.
-var notifier = require('node-notifier');
-
-// Is build
-var isBuild = false;
+/* Initialize plugins load
+   ========================================================================== */
+const plugins = loadPlugins();
 
 
 
 /* Load config (Credits @DaanPoron)
    ========================================================================== */
-var bowerComponentsPath = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.bowerrc'))).directory;
+// Get config
+let config = fs.readFileSync(path.resolve(__dirname, 'gonfig.json'), 'UTF-8');
 
-var config = fs.readFileSync(path.resolve(__dirname, 'gonfig.json'), 'UTF-8'),
-    vars = _.merge({
+// Set config
+const setConfig = (() => {
+    // Find vars and add bower_components path
+    const bowerComponentsPath = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.bowerrc'))).directory;
+    const vars = Object.assign({
         'bowerComponentsPath': bowerComponentsPath
     }, JSON.parse(config).vars);
 
-var resourcesPath = vars.resourcesPath;
-var distPath = vars.distPath;
+    // Replace paths in config with values from vars
+    for (let [key, value] of Object.entries(vars)) {
+        config = config.replace(new RegExp('\<\=\s*' + key + '\s*\>', 'ig'), value);
+    }
 
-_.forEach(vars, function(value, key) {
-    config = config.replace(new RegExp('\<\=\s*' + key + '\s*\>', 'ig'), value);
-});
-
-config = JSON.parse(config);
+    // Reparse config
+    config = JSON.parse(config);
+})();
 
 
 
 /* Errorhandling (Credits @JensGyselinck)
    ========================================================================== */
-var errorLogger = function(headerMessage, errorMessage, write) {
-    var i = 0,
+const errorLogger = (headerMessage, errorMessage, write) => {
+    let i = 0,
         boxLines = '';
 
     for (; i < headerMessage.length + 4; i ++) {
@@ -82,7 +69,6 @@ var errorLogger = function(headerMessage, errorMessage, write) {
     }
 
     if (config.showErrorNotifications) {
-
         notifier.notify({
             'title': headerMessage,
             'message': errorMessage,
@@ -97,13 +83,13 @@ var errorLogger = function(headerMessage, errorMessage, write) {
 /* Tasks
    ========================================================================== */
 // Styles
-gulp.task('styles', function() {
+gulp.task('styles', () => {
     return gulp.src(config.scss)
         // Sass
         .pipe(plugins.sass())
 
         // Error catch
-        .on('error', function(err) {
+        .on('error', (err) => {
             errorLogger('Styles Error', err.message, true);
             this.emit('end');
         })
@@ -118,7 +104,7 @@ gulp.task('styles', function() {
         .pipe(plugins.cssnano())
 
         // Rename the file to respect naming covention.
-        .pipe(plugins.rename(function(path) {
+        .pipe(plugins.rename((path) => {
             path.basename += '.min';
         }))
 
@@ -135,7 +121,7 @@ gulp.task('styles', function() {
 
 
 // JS
-gulp.task('js-app', function() {
+gulp.task('js-app', () => {
     return gulp.src(config.js.app)
         // Concat
         .pipe(plugins.concat('app.min.js'))
@@ -144,7 +130,7 @@ gulp.task('js-app', function() {
         .pipe(plugins.babel())
 
         // Error catch
-        .on('error', function(err) {
+        .on('error', (err) => {
             errorLogger('Error inside task "js"', err.message, true);
             this.emit('end');
         })
@@ -164,7 +150,7 @@ gulp.task('js-app', function() {
         ))
 
         // Error catch
-        .on('error', function(err) {
+        .on('error', (err) => {
             errorLogger('Error inside task "js"', err.message, true);
             this.emit('end');
         })
@@ -180,7 +166,7 @@ gulp.task('js-app', function() {
         .pipe(plugins.livereload());
 });
 
-gulp.task('js-vendors', function() {
+gulp.task('js-vendors', () => {
     return gulp.src(config.js.vendors)
         // Concat
         .pipe(plugins.concat('vendors.min.js'))
@@ -200,7 +186,7 @@ gulp.task('js-vendors', function() {
         ))
 
         // Error catch
-        .on('error', function(err) {
+        .on('error', (err) => {
             errorLogger('Error inside task "js"', err.message, true);
             this.emit('end');
         })
@@ -218,30 +204,30 @@ gulp.task('js-vendors', function() {
 
 
 // JS - Other
-gulp.task('js-other', function() {
+gulp.task('js-other', () => {
     return gulp.src(config.js.other)
-    // Uglify
-    .pipe(plugins.uglify({
-        mangle: {
-            except: ['jQuery']
-        }
-    }))
-    .on('error', function(err) {
-        errorLogger('Javascript Error', err.message);
-    })
+        // Uglify
+        .pipe(plugins.uglify({
+            mangle: {
+                except: ['jQuery']
+            }
+        }))
+        .on('error', (err) => {
+            errorLogger('Javascript Error', err.message);
+        })
 
-    // Set destination
-    .pipe(gulp.dest(config.dist.js))
+        // Set destination
+        .pipe(gulp.dest(config.dist.js))
 
-    // Show total size of js
-    .pipe(plugins.size({
-        title: 'js'
-    }));
+        // Show total size of js
+        .pipe(plugins.size({
+            title: 'js'
+        }));
 });
 
 
 // JS - Checks
-gulp.task('js-check', function() {
+gulp.task('js-check', () => {
     return gulp.src(config.js.app)
         // Check with jshint
         .pipe(plugins.jshint())
@@ -253,7 +239,7 @@ gulp.task('js-check', function() {
         .pipe(plugins.jshint.reporter('fail'))
 
         // Error catch
-        .on('error', function(err) {
+        .on('error', (err) => {
             errorLogger('Error inside taks "js-check"', err.message, false);
             this.emit('end');
         })
@@ -261,7 +247,7 @@ gulp.task('js-check', function() {
 
 
 // Images
-gulp.task('images', function() {
+gulp.task('images', () => {
     return gulp.src(config.img)
         // Only optimize changed images
         .pipe(plugins.changed(config.dist.img))
@@ -286,18 +272,27 @@ gulp.task('images', function() {
 
 
 // Clean
-gulp.task('clean', function(done) {
-    return del(distPath, {
+gulp.task('clean', (done) => {
+    return del(config.vars.distPath, {
         force: true
     });
 });
 
 
+// Serve
+gulp.task('serve', () => {
+    plugins.connect.server({
+        root: __dirname,
+        livereload: true
+    });
+});
+
+
 // Watch
-gulp.task('watch', function() {
+gulp.task('watch', () => {
     // Reload
     plugins.livereload.listen();
-    gulp.watch(config.liveReloadFiles).on('change', function(file) {
+    gulp.watch(config.liveReloadFiles).on('change', (file) => {
         plugins.livereload.changed(file.path);
     });
 
@@ -308,20 +303,26 @@ gulp.task('watch', function() {
 });
 
 
+
+/* Run Tasks
+   ========================================================================== */
+// Is build
+let isBuild = false;
+
 // Default
-gulp.task('default', function(done) {
+gulp.task('default', (done) => {
     isBuild = false;
 
     runSequence(
         'clean',
         ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images'],
-        ['watch'],
+        ['serve', 'watch'],
     done);
 });
 
 
 // Build
-gulp.task('build', function(done) {
+gulp.task('build', (done) => {
     isBuild = true;
 
     runSequence(
@@ -332,18 +333,18 @@ gulp.task('build', function(done) {
 
 
 // Typo fallbacks
-gulp.task('biuld', function(done) {
+gulp.task('biuld', (done) => {
     gulp.start('build');
 });
-gulp.task('buil', function(done) {
+gulp.task('buil', (done) => {
     gulp.start('build');
 });
-gulp.task('biuld', function(done) {
+gulp.task('biuld', (done) => {
     gulp.start('build');
 });
-gulp.task('buil', function(done) {
+gulp.task('buil', (done) => {
     gulp.start('build');
 });
-gulp.task('buld', function(done) {
+gulp.task('buld', (done) => {
     gulp.start('build');
 });

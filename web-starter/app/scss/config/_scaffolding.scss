@@ -8,13 +8,13 @@
 
 /* Rem Calc
 ========================================================================== */
-$sc-rem-base: 16px;
+$rem-base: 16px;
 
 
 
 /* Breakpoints
 ========================================================================== */
-$sc-grid-breakpoints: (
+$grid-breakpoints: (
     xs: 0,
     sm: 550px,
     md: 850px,
@@ -26,7 +26,7 @@ $sc-grid-breakpoints: (
 
 /* Container
 ========================================================================== */
-$sc-container-max-widths: (
+$container-max-widths: (
     sm: 650px,
     md: 750px,
     lg: 950px,
@@ -37,18 +37,18 @@ $sc-container-max-widths: (
 
 /* Columns
 ========================================================================== */
-$sc-grid-columns-count: 12;
+$grid-columns-count: 12;
 
 
 
 /* Gutter
 ========================================================================== */
-$sc-grid-gutter-width-base: 1.875rem;
+$grid-gutter-width-base: 1.875rem;
 
-$sc-grid-gutter-widths: (
-xs: $sc-grid-gutter-width-base,
-sm: $sc-grid-gutter-width-base,
-md: $sc-grid-gutter-width-base,
-lg: $sc-grid-gutter-width-base,
-xl: $sc-grid-gutter-width-base
+$grid-gutter-widths: (
+xs: $grid-gutter-width-base,
+sm: $grid-gutter-width-base,
+md: $grid-gutter-width-base,
+lg: $grid-gutter-width-base,
+xl: $grid-gutter-width-base
 );

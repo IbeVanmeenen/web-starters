@@ -2,7 +2,7 @@
    Webstarter
    ========================================================================== */
 
-webstarter.app = (undefined) => {
+webstarter.app = () => {
 
     let exports = this.app;
 

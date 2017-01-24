@@ -4,7 +4,7 @@
 
 /* Next
    ========================================================================== */
-@function breakpoint-next($name, $breakpoints: $sc-grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
     $n: index($breakpoint-names, $name);
 
     @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
@@ -14,7 +14,7 @@
 
 /* Min
    ========================================================================== */
-@function breakpoint-min($name, $breakpoints: $sc-grid-breakpoints) {
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
     $min: map-get($breakpoints, $name);
 
     @return if($min != 0, $min, null);
@@ -24,7 +24,7 @@
 
 /* Max
    ========================================================================== */
-@function breakpoint-max($name, $breakpoints: $sc-grid-breakpoints) {
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
     $next: breakpoint-next($name, $breakpoints);
 
     @return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
@@ -34,7 +34,7 @@
 
 /* Up
    ========================================================================== */
-@mixin media-breakpoint-up($name, $breakpoints: $sc-grid-breakpoints) {
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
     $min: breakpoint-min($name, $breakpoints);
 
     @if $min {
@@ -50,7 +50,7 @@
 
 /* Down
    ========================================================================== */
-@mixin media-breakpoint-down($name, $breakpoints: $sc-grid-breakpoints) {
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
     $max: breakpoint-max($name, $breakpoints);
 
     @if $max {
@@ -66,7 +66,7 @@
 
 /* Only
    ========================================================================== */
-@mixin media-breakpoint-only($name, $breakpoints: $sc-grid-breakpoints) {
+@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
     @include media-breakpoint-up($name, $breakpoints) {
         @include media-breakpoint-down($name, $breakpoints) {
             @content;
@@ -78,7 +78,7 @@
 
 /* Between
    ========================================================================== */
-@mixin media-breakpoint-between($lower, $upper, $breakpoints: $sc-grid-breakpoints) {
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
     @include media-breakpoint-up($lower, $breakpoints) {
         @include media-breakpoint-down($upper, $breakpoints) {
             @content;

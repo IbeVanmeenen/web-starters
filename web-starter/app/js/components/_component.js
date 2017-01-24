@@ -2,9 +2,9 @@
    Webstarter - Component
    ========================================================================== */
 
-webstarter.component = (undefined) => {
+webstarter.component = () => {
 
-    let exports = this.component;
+    let exports = webstarter.component;
 
 
     // Private function
