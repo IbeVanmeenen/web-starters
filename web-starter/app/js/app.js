@@ -4,7 +4,7 @@
 
 webstarter.app = () => {
 
-    let exports = this.app;
+    let exports = webstarter.app;
 
 
     // Scroll

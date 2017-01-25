@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Cookie Consent
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.cookie-bar {
+    z-index: 9998;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+    width: 100%;
+    padding: 1em 0;
+}
+
+.cookie-bar--visible {
+    display: block;
+}
+
+
+
+/* Container
+   ========================================================================== */
+.cookie-bar__container {
+    position: relative;
+
+    padding: 0 4em;
+}
+
+
+
+/* Btn
+   ========================================================================== */
+.cookie-bar__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    padding: 1em 2em;
+
+    background: transparent;
+    border: 0;
+
+    &:active, &:focus {
+        outline: 0;
+    }
+}
