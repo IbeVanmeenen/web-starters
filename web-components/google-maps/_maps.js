@@ -6,7 +6,7 @@ webstarter.maps = () => {
 
     // Map styles
     const mapStyle = '';
-    let customMarkerImg = '';
+    let customMarkerImg = ''; // SVG
 
 
     // Setup
@@ -29,7 +29,7 @@ webstarter.maps = () => {
         // Custom Marker
         if ((/Trident\/7\./).test(navigator.userAgent)) {
             // Fix IE10 - 11
-            customMarkerImg = '';
+            customMarkerImg = ''; // PNG FALLBACK
         }
 
         const customMarker = {
