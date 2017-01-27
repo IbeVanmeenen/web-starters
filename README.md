@@ -11,7 +11,7 @@
 ### Components
 - [Scroll To](web-components/scroll-to)
 - [Analytics](web-components/analytics)
-- [Cookie-consent](web-components/cookie-consent)
+- [Cookie Consent](web-components/cookie-consent)
 - [Google Maps](web-components/google-maps)
 - [Polyfills](web-components/polyfills)
 
