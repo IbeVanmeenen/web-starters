@@ -8,7 +8,6 @@
 
     "scss": "<=resourcesPath>scss/**/*.scss",
     "img": "<=resourcesPath>img/**/*.{png,jpg,jpeg,gif,svg,webp}",
-    "fonts": "<=resourcesPath>fonts/**/*.{woff,woff2}",
 
     "js": {
         "vendors": [],

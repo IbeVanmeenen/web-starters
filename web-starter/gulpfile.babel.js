@@ -89,7 +89,7 @@ gulp.task('styles', () => {
         .pipe(plugins.sass())
 
         // Error catch
-        .on('error', (err) => {
+        .on('error', function(err) {
             errorLogger('Styles Error', err.message, true);
             this.emit('end');
         })
@@ -130,7 +130,7 @@ gulp.task('js-app', () => {
         .pipe(plugins.babel())
 
         // Error catch
-        .on('error', (err) => {
+        .on('error', function(err) {
             errorLogger('Error inside task "js"', err.message, true);
             this.emit('end');
         })
@@ -150,7 +150,7 @@ gulp.task('js-app', () => {
         ))
 
         // Error catch
-        .on('error', (err) => {
+        .on('error', function(err) {
             errorLogger('Error inside task "js"', err.message, true);
             this.emit('end');
         })
@@ -186,7 +186,7 @@ gulp.task('js-vendors', () => {
         ))
 
         // Error catch
-        .on('error', (err) => {
+        .on('error', function(err) {
             errorLogger('Error inside task "js"', err.message, true);
             this.emit('end');
         })
@@ -212,8 +212,9 @@ gulp.task('js-other', () => {
                 except: ['jQuery']
             }
         }))
-        .on('error', (err) => {
+        .on('error', function(err) {
             errorLogger('Javascript Error', err.message);
+            this.emit('end');
         })
 
         // Set destination
@@ -239,7 +240,7 @@ gulp.task('js-check', () => {
         .pipe(plugins.jshint.reporter('fail'))
 
         // Error catch
-        .on('error', (err) => {
+        .on('error', function(err) {
             errorLogger('Error inside taks "js-check"', err.message, false);
             this.emit('end');
         })
