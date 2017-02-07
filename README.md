@@ -1,6 +1,6 @@
 # Web Starters
 
-> Startkits based on my own daily workflow
+> Startkits and some components based on my own daily workflow
 
 
 ### Kits
