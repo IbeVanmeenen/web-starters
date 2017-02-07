@@ -1,5 +1,9 @@
 /* ==========================================================================
    Webstarter - Scroll To
+
+   // Dependencies:
+   - helpers/_offset.js
+   - helpers/_easeInOutQuad.js
    ========================================================================== */
 
 webstarter.scrollTo = (body) => {
@@ -13,22 +17,11 @@ webstarter.scrollTo = (body) => {
         increment = 20;
 
 
-    // Animation Helper
-    Math.easeInOutQuad = (t,b,c,d) => {
-        t /= d/2;
-        if (t < 1) {
-            return c/2*t*t + b;
-        }
-        t--;
-        return -c/2 * (t*(t-2) - 1) + b;
-    };
-
-
     // Animate Scroll
     const animateScroll = () => {
         currentTime += increment;
 
-        var amount = Math.easeInOutQuad(currentTime, start, change, duration);
+        var amount = webstarter.easeInOutQuad(currentTime, start, change, duration);
         document.body.scrollTop = document.documentElement.scrollTop = amount;
 
         if (currentTime < duration) {
@@ -51,7 +44,7 @@ webstarter.scrollTo = (body) => {
                 duration = (dataDuration !== null && dataDuration !== undefined && !isNaN(dataDuration)) ? dataDuration : defaultDuration;
 
                 const targetEl = document.getElementById(target);
-                const targetTop = targetEl.offsetTop - targetOffset;
+                const targetTop = webstarter.offset.top(targetEl) - targetOffset;
 
                 start = document.documentElement.scrollTop || document.body.scrollTop;
                 change = targetTop - start;
