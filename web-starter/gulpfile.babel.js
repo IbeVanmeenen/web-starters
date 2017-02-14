@@ -84,6 +84,11 @@ const errorLogger = (headerMessage, errorMessage, write) => {
    ========================================================================== */
 // Styles
 gulp.task('styles', () => {
+    const postCssProcessors = [
+        require('autoprefixer'),
+        require('cssnano')
+    ];
+
     return gulp.src(config.scss)
         // Sass
         .pipe(plugins.sass())
@@ -97,11 +102,8 @@ gulp.task('styles', () => {
         // Combine Media Queries
         .pipe(plugins.combineMq())
 
-        // Prefix where needed
-        .pipe(plugins.autoprefixer(config.browserSupport))
-
-        // Minify output
-        .pipe(plugins.cssnano())
+        // Post CSS
+        .pipe(plugins.postcss(postCssProcessors))
 
         // Rename the file to respect naming covention.
         .pipe(plugins.rename((path) => {
@@ -116,6 +118,7 @@ gulp.task('styles', () => {
             title: 'css'
         }))
 
+        // Livereload
         .pipe(plugins.livereload());
 });
 
@@ -163,6 +166,7 @@ gulp.task('js-app', () => {
             title: 'js'
         }))
 
+        // Livereload
         .pipe(plugins.livereload());
 });
 
@@ -199,6 +203,7 @@ gulp.task('js-vendors', () => {
             title: 'js'
         }))
 
+        // Livereload
         .pipe(plugins.livereload());
 });
 

@@ -2,7 +2,7 @@
     "showErrorNotifications": true,
 
     "vars": {
-        "distPath": "../public/assets/",
+        "distPath": "assets/",
         "resourcesPath": "app/"
     },
 
