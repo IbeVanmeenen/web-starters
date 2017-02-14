@@ -10,7 +10,9 @@
     "img": "<=resourcesPath>img/**/*.{png,jpg,jpeg,gif,svg,webp}",
 
     "js": {
-        "vendors": [],
+        "vendors": [
+            "<=bowerComponentsPath>"
+        ],
         "app": [
             "<=resourcesPath>js/_scope.js",
             "<=resourcesPath>js/components/*.js",
