@@ -1,19 +1,5 @@
-/* ==========================================================================
-   Scaffolding
-
-   This file is exclusively intended for setting up variables
-   Never add styles directly to this file
-   ========================================================================== */
-
-
-/* Rem Calc
-========================================================================== */
 $rem-base: 16px;
 
-
-
-/* Breakpoints
-========================================================================== */
 $grid-breakpoints: (
     xs: 0,
     sm: 550px,
@@ -22,10 +8,6 @@ $grid-breakpoints: (
     xl: 1200px
 );
 
-
-
-/* Container
-========================================================================== */
 $container-max-widths: (
     sm: 650px,
     md: 750px,
@@ -33,22 +15,12 @@ $container-max-widths: (
     xl: 1150px
 );
 
-
-
-/* Columns
-========================================================================== */
-$grid-columns-count: 12;
-
-
-
-/* Gutter
-========================================================================== */
 $grid-gutter-width-base: 1.875rem;
 
 $grid-gutter-widths: (
-xs: $grid-gutter-width-base,
-sm: $grid-gutter-width-base,
-md: $grid-gutter-width-base,
-lg: $grid-gutter-width-base,
-xl: $grid-gutter-width-base
+    xs: $grid-gutter-width-base,
+    sm: $grid-gutter-width-base,
+    md: $grid-gutter-width-base,
+    lg: $grid-gutter-width-base,
+    xl: $grid-gutter-width-base
 );
