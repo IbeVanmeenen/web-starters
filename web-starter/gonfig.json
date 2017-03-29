@@ -1,9 +1,11 @@
 {
     "showErrorNotifications": true,
+    "createStyleguide": true,
 
     "vars": {
         "distPath": "assets/",
-        "resourcesPath": "app/"
+        "resourcesPath": "app/",
+        "styleguidePath": "app/styleguide/"
     },
 
     "scss": "<=resourcesPath>scss/**/*.scss",
@@ -33,9 +35,24 @@
         "ios 6"
     ],
 
-    "liveReloadFiles": [
-        "<=distPath>css/style.min.css",
-        "<=distPath>js/*.js",
-        "<=distPath>*.html"
-    ]
+    "styleguide": {
+        "layout": "default",
+        "layouts": "<=styleguidePath>views/layouts/*",
+        "layoutIncludes": "<=styleguidePath>views/layouts/includes/*",
+        "views": [
+            "<=styleguidePath>views/**/*",
+            "!<=styleguidePath>views/+(layouts)/**"
+        ],
+        "materials": "<=styleguidePath>materials/**/*",
+        "data": "<=styleguidePath>data/**/*.{json,yml}",
+        "docs": "<=styleguidePath>docs/**/*.md",
+        "keys": {
+            "materials": "materials",
+            "views": "views",
+            "docs": "docs"
+        },
+        "helpers": {},
+        "logErrors": false,
+        "dest": "<=distPath>styleguide/"
+    }
 }

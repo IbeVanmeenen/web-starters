@@ -22,6 +22,7 @@ import runSequence from 'run-sequence';
 import jshintStylish from 'jshint-stylish';
 import loadPlugins from 'gulp-load-plugins';
 
+import assemble from 'fabricator-assemble';
 
 
 /* Initialize plugins load
@@ -277,6 +278,12 @@ gulp.task('images', () => {
 });
 
 
+// Styleguide
+gulp.task('styleguide', () => {
+    return assemble(config.styleguide);
+});
+
+
 // Clean
 gulp.task('clean', (done) => {
     return del(config.vars.distPath, {
@@ -296,16 +303,17 @@ gulp.task('serve', () => {
 
 // Watch
 gulp.task('watch', () => {
-    // Reload
+    // Start livereload listen
     plugins.livereload.listen();
-    gulp.watch(config.liveReloadFiles).on('change', (file) => {
-        plugins.livereload.changed(file.path);
-    });
 
     // Watch
     gulp.watch(config.scss, ['styles']);
     gulp.watch(config.js.app, ['js-check', 'js-app']);
     gulp.watch(config.img, ['images']);
+    gulp.watch(config.styleguide.layouts, ['styleguide']);
+    gulp.watch(config.styleguide.layoutIncludes, ['styleguide']);
+    gulp.watch(config.styleguide.views, ['styleguide']);
+    gulp.watch(config.styleguide.materials, ['styleguide']);
 });
 
 
@@ -322,6 +330,7 @@ gulp.task('default', (done) => {
     runSequence(
         'clean',
         ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images'],
+        'styleguide',
         ['serve', 'watch'],
     done);
 });
@@ -334,6 +343,7 @@ gulp.task('build', (done) => {
     runSequence(
         'clean',
         ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images'],
+        'styleguide',
     done);
 });
 

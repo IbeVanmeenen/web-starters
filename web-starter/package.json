@@ -39,7 +39,9 @@
         "gulp-strip-debug": "~1.1",
         "gulp-optimize-js": "~1.1",
 
-        "gulp-imagemin": "~3.1"
+        "gulp-imagemin": "~3.1",
+
+        "fabricator-assemble": "~1.2"
     },
     "engines": {
         "node": ">=0.10.0"
