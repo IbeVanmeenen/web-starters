@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{title}}</title>
+    <title>Pages</title>
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -40,11 +40,55 @@
 </head>
 <body class="styleguide">
     <nav class="styleguide__nav">
-        {{> styleguide-menu}}
+        <!-- fabricator menu -->
+        <a href="index.html" class="styleguide__nav__item">
+            Overview
+        </a>
+        
+            <a href="blocks.html" class="styleguide__nav__item">
+                Blocks
+            </a>
+                <a href="blocks.html#button" class="styleguide__nav__item styleguide__nav__item--sub">
+                    Button
+                </a>
+                <a href="blocks.html#lists" class="styleguide__nav__item styleguide__nav__item--sub">
+                    Lists
+                </a>
+            <a href="structures.html" class="styleguide__nav__item">
+                Structures
+            </a>
+                <a href="structures.html#hero" class="styleguide__nav__item styleguide__nav__item--sub">
+                    Hero
+                </a>
+        
+            <a href="pages.html" class="styleguide__nav__item">
+                Pages
+            </a>
+                <a href="pages/home.html" target="_blank" class="styleguide__nav__item styleguide__nav__item--sub">
+                    Home
+                </a>
+        
+        <a href="docs.html" class="styleguide__nav__item">
+            Docs
+        </a>
+            <a href="docs.html#javascript" class="styleguide__nav__item styleguide__nav__item--sub">
+                Javascript
+            </a>
+        <!-- /fabricator menu -->
     </nav>
 
     <main role="main" class="styleguide__content">
-        {% body %}
+        
+<h1 class="styleguide__page-title">
+    Pages
+</h1>
+
+<nav>
+        <a href="pages/home.html" class="f-item-heading" target="_blank">
+            Home
+        </a>
+</nav>
+
     </main>
 
     <script src="/assets/js/footer.min.js"></script>

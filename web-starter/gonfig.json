@@ -50,9 +50,7 @@
             "views": "views",
             "docs": "docs"
         },
-        "helpers": {
-            "markdown": "require('helper-markdown')"
-        },
+        "helpers": {},
         "logErrors": false,
         "dest": "<=distPath>styleguide/"
     }

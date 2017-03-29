@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{title}}</title>
+    <title>Structures</title>
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -40,11 +40,71 @@
 </head>
 <body class="styleguide">
     <nav class="styleguide__nav">
-        {{> styleguide-menu}}
+        <!-- fabricator menu -->
+        <a href="index.html" class="styleguide__nav__item">
+            Overview
+        </a>
+        
+            <a href="blocks.html" class="styleguide__nav__item">
+                Blocks
+            </a>
+                <a href="blocks.html#button" class="styleguide__nav__item styleguide__nav__item--sub">
+                    Button
+                </a>
+                <a href="blocks.html#lists" class="styleguide__nav__item styleguide__nav__item--sub">
+                    Lists
+                </a>
+            <a href="structures.html" class="styleguide__nav__item">
+                Structures
+            </a>
+                <a href="structures.html#hero" class="styleguide__nav__item styleguide__nav__item--sub">
+                    Hero
+                </a>
+        
+            <a href="pages.html" class="styleguide__nav__item">
+                Pages
+            </a>
+                <a href="pages/home.html" target="_blank" class="styleguide__nav__item styleguide__nav__item--sub">
+                    Home
+                </a>
+        
+        <a href="docs.html" class="styleguide__nav__item">
+            Docs
+        </a>
+            <a href="docs.html#javascript" class="styleguide__nav__item styleguide__nav__item--sub">
+                Javascript
+            </a>
+        <!-- /fabricator menu -->
     </nav>
 
     <main role="main" class="styleguide__content">
-        {% body %}
+        
+<h1 class="styleguide__page-title">
+    Structures
+</h1>
+
+    <section class="styleguide__item-section" id="hero">
+            <header>
+                <h2 class="styleguide__item-title">
+                    Hero
+                </h2>
+            </header>
+    
+            
+            
+            
+            
+            <input type="checkbox" class="styleguide__item-code-toggle" />
+            
+            <div class="styleguide__item-code">
+                <pre><code class="language-markup"></code></pre>
+            </div>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="styleguide__item-code-toggle-icon">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1 10.199l-3.64 1.801 3.64 1.796v2.204l-6-2.935v-2.131l6-2.934v2.199zm8 2.866l-6 2.935v-2.204l3.64-1.796-3.64-1.801v-2.199l6 2.935v2.13z"/>
+            </svg>
+    </section>
+
     </main>
 
     <script src="/assets/js/footer.min.js"></script>
