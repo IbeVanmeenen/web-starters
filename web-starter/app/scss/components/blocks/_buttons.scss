@@ -31,17 +31,7 @@
     }
 }
 
-.btn--hover {
-
-    &:hover, &:focus {
-
-    }
-
-    &:active {
-
-    }
-}
-
 .btn--primary {
-
+    background: $black;
+    color: $white;
 }
