@@ -1,48 +1,36 @@
 <!-- fabricator menu -->
-<nav role="navigation" class="main-nav">
-    <a href="index.html" class="main-nav__item">
-        Overview
-    </a>
+<a href="index.html" class="styleguide__nav__item">
+    Overview
+</a>
 
-    {{#each materials}}
-        <a href="{{@key}}.html" class="main-nav__item">
+{{#each materials}}
+    <a href="{{@key}}.html" class="styleguide__nav__item">
+        {{name}}
+    </a>
+    {{#each items}}
+        <a href="{{@../key}}.html#{{@key}}" class="styleguide__nav__item styleguide__nav__item--sub">
             {{name}}
         </a>
-        <ul>
-            {{#each items}}
-            <li>
-                <a href="{{@../key}}.html#{{@key}}" class="main-nav__item">
-                    {{name}}
-                </a>
-            </li>
-            {{/each}}
-        </ul>
     {{/each}}
+{{/each}}
 
-    {{#each views}}
-        <a href="{{@key}}.html" class="main-nav__item">
+{{#each views}}
+    <a href="{{@key}}.html" class="styleguide__nav__item">
+        {{name}}
+    </a>
+    {{#each items}}
+        <a href="{{@../key}}/{{@key}}.html" target="_blank" class="styleguide__nav__item styleguide__nav__item--sub">
             {{name}}
         </a>
-        <ul>
-            {{#each items}}
-            <li>
-                <a href="{{@../key}}/{{@key}}.html" target="_blank" class="main-nav__item">
-                    {{name}}
-                </a>
-            </li>
-            {{/each}}
-        </ul>
     {{/each}}
+{{/each}}
 
-    <a href="docs.html" class="main-nav__item">
-        Docs
+<a href="docs.html" class="styleguide__nav__item">
+    Docs
+</a>
+{{#each docs}}
+    <a href="docs.html#{{@key}}" class="styleguide__nav__item styleguide__nav__item--sub">
+        {{name}}
     </a>
-    <ul>
-        {{#each docs}}
-        <li>
-            <a href="docs.html#{{@key}}">{{name}}</a>
-        </li>
-        {{/each}}
-    </ul>
-</nav>
+{{/each}}
 <!-- /fabricator menu -->

@@ -1,14 +1,14 @@
-<section class="" id="{{@key}}">
+<section class="styleguide__item-section" id="{{@key}}">
     {{#if items}}
         <header>
-            <h2>
+            <h2 class="styleguide__item-title">
                 {{name}}
             </h2>
         </header>
         {{#each items}}
             <section id="{{@key}}">
                 <header>
-                    <h3>
+                    <h3 class="styleguide__item-title styleguide__item-title--sub">
                         {{name}}
                     </h3>
                 </header>
@@ -18,7 +18,7 @@
         {{/each}}
     {{else}}
         <header>
-            <h2>
+            <h2 class="styleguide__item-title">
                 {{name}}
             </h2>
         </header>

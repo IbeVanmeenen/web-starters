@@ -36,11 +36,16 @@
     <meta name="twitter:image:src" content="">
 
     <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="stylesheet" href="/assets/css/styleguide.min.css">
 </head>
-<body>
-    {{> styleguide-menu}}
+<body class="styleguide">
+    <nav class="styleguide__nav">
+        {{> styleguide-menu}}
+    </nav>
 
-    {% body %}
+    <main role="main" class="styleguide__content">
+        {% body %}
+    </main>
 
     <script src="/assets/js/footer.min.js"></script>
 </body>
