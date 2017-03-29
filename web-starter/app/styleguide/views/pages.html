@@ -1,0 +1,15 @@
+---
+title: Pages
+---
+
+<h1>
+    Pages
+</h1>
+
+<nav>
+    {{#each views.pages.items}}
+        <a href="pages/{{@key}}.html" class="f-item-heading" target="_blank">
+            {{name}}
+        </a>
+    {{/each}}
+</nav>

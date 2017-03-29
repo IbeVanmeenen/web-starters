@@ -1,6 +1,5 @@
 {
     "showErrorNotifications": true,
-    "createStyleguide": true,
 
     "vars": {
         "distPath": "assets/",
@@ -51,7 +50,9 @@
             "views": "views",
             "docs": "docs"
         },
-        "helpers": {},
+        "helpers": {
+            "markdown": "require('helper-markdown')"
+        },
         "logErrors": false,
         "dest": "<=distPath>styleguide/"
     }

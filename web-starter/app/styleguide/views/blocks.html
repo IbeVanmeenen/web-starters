@@ -1,24 +1,11 @@
 ---
-title: Blocks - Webstarter
-items:
-    - button
-    - lists
+title: Blocks
 ---
 
-{{> styleguide-menu }}
+<h1>
+    Blocks
+</h1>
 
-<hr>
-
-<h2 id="#button">
-    Buttons
-</h2>
-{{> button}}
-
-<hr>
-
-<h2 id="#button">
-    Lists
-</h2>
-{{> lists}}
-
-<hr>
+{{#each materials.blocks.items}}
+    {{> styleguide-item this}}
+{{/each}}

@@ -1,0 +1,21 @@
+---
+title: Docs
+---
+
+<h1>
+    Docs
+</h1>
+
+{{#each docs}}
+    <section>
+        <header>
+            <h2 id="{{@key}}">
+                <a href="#{{@key}}">
+                    {{name}}
+                </a>
+            </h2>
+        </header>
+
+        {{{content}}}
+    </section>
+{{/each}}
