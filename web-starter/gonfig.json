@@ -1,5 +1,6 @@
 {
     "showErrorNotifications": true,
+    "generateStyleguide": true,
 
     "vars": {
         "distPath": "assets/",

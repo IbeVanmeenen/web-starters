@@ -280,7 +280,9 @@ gulp.task('images', () => {
 
 // Styleguide
 gulp.task('styleguide', () => {
-    return assemble(config.styleguide);
+    if (config.generateStyleguide) {
+        return assemble(config.styleguide);
+    }
 });
 
 
@@ -310,10 +312,13 @@ gulp.task('watch', () => {
     gulp.watch(config.scss, ['styles']);
     gulp.watch(config.js.app, ['js-check', 'js-app']);
     gulp.watch(config.img, ['images']);
-    gulp.watch(config.styleguide.layouts, ['styleguide']);
-    gulp.watch(config.styleguide.layoutIncludes, ['styleguide']);
-    gulp.watch(config.styleguide.views, ['styleguide']);
-    gulp.watch(config.styleguide.materials, ['styleguide']);
+
+    if (config.generateStyleguide) {
+        gulp.watch(config.styleguide.layouts, ['styleguide']);
+        gulp.watch(config.styleguide.layoutIncludes, ['styleguide']);
+        gulp.watch(config.styleguide.views, ['styleguide']);
+        gulp.watch(config.styleguide.materials, ['styleguide']);
+    }
 });
 
 
