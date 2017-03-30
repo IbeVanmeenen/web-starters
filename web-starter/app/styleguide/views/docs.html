@@ -7,12 +7,10 @@ title: Docs
 </h1>
 
 {{#each docs}}
-    <section>
+    <section id="{{@key}}" class="styleguide__item-section">
         <header>
-            <h2 id="{{@key}}">
-                <a href="#{{@key}}">
-                    {{name}}
-                </a>
+            <h2 class="styleguide__item-title">
+                {{name}}
             </h2>
         </header>
 
