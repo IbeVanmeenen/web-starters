@@ -223,6 +223,38 @@
     color: #4285f4;
 }
 
+.styleguide__color {
+    position: relative;
+
+    display: inline-block;
+    width: 20%;
+    height: 10rem;
+    margin: 0 1rem 2rem 0;
+
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.styleguide__color__name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    margin: 0;
+    padding: 1em 0;
+    width: 100%;
+
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+
+    color: #333;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
 
 
 

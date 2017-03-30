@@ -1,2 +1,5 @@
 projectName: "Webstarter"
 logoUrl: ""
+colors:
+    $black: "#181c21"
+    $white: "#fff"

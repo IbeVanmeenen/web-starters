@@ -8,6 +8,12 @@ title: Styleguide
     </h1>
 </header>
 
-<p class="styleguide__item-section">
-    One styleguide to rule them all
-</p>
+<section class="styleguide__item-section">
+    {{#each general.colors}}
+        <div class="styleguide__color" style="background-color: {{this}}">
+            <h4 class="styleguide__color__name">
+                {{@key}} _ <small>{{this}}</small>
+            </h4>
+        </div>
+    {{/each}}
+</section>
