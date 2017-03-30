@@ -1,7 +1,9 @@
 <!-- fabricator menu -->
 <a href="index.html" class="styleguide__nav__item">
-    Overview
+    <img src="{{general.logoUrl}}" alt="{{general.projectName}}" class="styleguide__nav__img">
 </a>
+
+<hr class="styleguide__nav__hr">
 
 {{#each materials}}
     <a href="{{@key}}.html" class="styleguide__nav__item">
@@ -13,6 +15,8 @@
         </a>
     {{/each}}
 {{/each}}
+
+<hr class="styleguide__nav__hr">
 
 {{#each views}}
     <a href="{{@key}}.html" class="styleguide__nav__item">
