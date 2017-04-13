@@ -1,11 +1,3 @@
-/* ==========================================================================
-   Webstarter - Scroll To
-
-   // Dependencies:
-   - helpers/_offset.js
-   - helpers/_easeInOutQuad.js
-   ========================================================================== */
-
 webstarter.scrollTo = (body) => {
 
     let start, currentTime, change,
@@ -21,7 +13,7 @@ webstarter.scrollTo = (body) => {
     const animateScroll = () => {
         currentTime += increment;
 
-        var amount = webstarter.easeInOutQuad(currentTime, start, change, duration);
+        var amount = Math.easeInOutQuad(currentTime, start, change, duration);
         document.body.scrollTop = document.documentElement.scrollTop = amount;
 
         if (currentTime < duration) {
@@ -44,7 +36,7 @@ webstarter.scrollTo = (body) => {
                 duration = (dataDuration !== null && dataDuration !== undefined && !isNaN(dataDuration)) ? dataDuration : defaultDuration;
 
                 const targetEl = document.getElementById(target);
-                const targetTop = webstarter.offset.top(targetEl) - targetOffset;
+                const targetTop = webstarter.getTopOffset(targetEl) - targetOffset;
 
                 start = document.documentElement.scrollTop || document.body.scrollTop;
                 change = targetTop - start;

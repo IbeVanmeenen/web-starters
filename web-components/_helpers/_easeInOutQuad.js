@@ -2,14 +2,11 @@
    Webstarter - Helper: easeInOutQuad
    ========================================================================== */
 
-webstarter.easeInOutQuad = (currentTime, start, change, duration) => {
-    currentTime /= duration / 2;
-
-    if (currentTime < 1) {
-        return change / 2 * currentTime * currentTime + start;
-    }
-
-    currentTime--;
-
-    return -change / 2 * (currentTime * (currentTime - 2) - 1) + duration;
+Math.easeInOutQuad = (t,b,c,d) => {
+   t /= d/2;
+   if (t < 1) {
+       return c/2*t*t + b;
+   }
+   t--;
+   return -c/2 * (t*(t-2) - 1) + b;
 };
