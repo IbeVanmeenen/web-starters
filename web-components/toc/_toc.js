@@ -32,7 +32,7 @@ webstarter.toc = (body) => {
         [].forEach.call(document.getElementsByClassName('js-toc-item'), (item) => {
             const itemDetails = {
                 'item': item,
-                'offset': bogaert.getOffset.get(document.getElementById(item.getAttribute('href').slice(+1))),
+                'offset': webstarter.offset.top(document.getElementById(item.getAttribute('href').slice(+1))),
                 'target': item.getAttribute('href')
             };
 
