@@ -29,12 +29,6 @@
         "img": "<=distPath>img/"
     },
 
-    "browserSupport": [
-        "last 2 versions",
-        "ie 9-11",
-        "ios 6"
-    ],
-
     "styleguide": {
         "layout": "default",
         "layouts": "<=styleguidePath>views/layouts/*",

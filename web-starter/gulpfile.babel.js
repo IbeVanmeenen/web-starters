@@ -85,8 +85,10 @@ const errorLogger = (headerMessage, errorMessage, write) => {
    ========================================================================== */
 // Styles
 gulp.task('styles', () => {
+    // Require PostCss processors
     const postCssProcessors = [
         require('autoprefixer'),
+        require('css-mqpacker'),
         require('cssnano')
     ];
 
@@ -100,10 +102,7 @@ gulp.task('styles', () => {
             this.emit('end');
         })
 
-        // Combine Media Queries
-        .pipe(plugins.combineMq())
-
-        // Post CSS
+        // Post CSS (Autoprefix, Combine MediaQueries and minify CSS)
         .pipe(plugins.postcss(postCssProcessors))
 
         // Rename the file to respect naming covention.
