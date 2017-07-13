@@ -1,0 +1,59 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 1.5rem 0 .8rem;
+
+    font-family: $font-family--headers;
+    font-weight: 400;
+    line-height: $line-height--headers;
+
+    + p {
+        margin-top: 0;
+    }
+}
+
+h1 {
+    font-size: 2rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 3rem;
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 2rem;
+    }
+}
+
+h3 {
+    font-size: 1.1rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1.3rem;
+    }
+}
+
+h4 {
+    font-size: 1rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1.3rem;
+    }
+}
+
+h5 {
+    font-size: 1rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1.1rem;
+    }
+}
+
+h6 {
+    font-size: .9rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,37 @@
+.btn {
+    display: inline-block;
+    margin: 0;
+    padding: 1em;
+
+    vertical-align: middle;
+
+    border: 0;
+
+    font-size: rem-calc(12);
+    font-weight: bold;
+    line-height: 1;
+    color: $black;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    background: $white;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+
+    &:active, &:focus {
+        outline: 0;
+    }
+}
+
+.btn--primary {
+    background: $black;
+    color: $white;
+}

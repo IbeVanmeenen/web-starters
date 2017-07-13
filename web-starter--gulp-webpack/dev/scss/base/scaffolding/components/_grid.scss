@@ -1,0 +1,88 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:  ($grid-gutter-width-base / 2);
+    padding-right: ($grid-gutter-width-base / 2);
+
+    @each $breakpoint, $container-max-width in $container-max-widths {
+
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+            width: $container-max-width;
+            max-width: 100%;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -webkit-flex-wrap: wrap;
+
+    @each $breakpoint in map-keys($grid-gutter-widths) {
+
+        @include media-breakpoint-up($breakpoint) {
+            $gutter: map-get($grid-gutter-widths, $breakpoint);
+
+            margin-left: ($gutter / -2);
+            margin-right: ($gutter / -2);
+        }
+    }
+}
+
+.col {
+    position: relative;
+
+    flex-grow: 1;
+    flex-basis: 100%;
+
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1px;
+
+    @each $breakpoint in map-keys($grid-gutter-widths) {
+
+        @include media-breakpoint-up($breakpoint) {
+            $gutter: map-get($grid-gutter-widths, $breakpoint);
+
+            padding-left:  ($gutter / 2);
+            padding-right: ($gutter / 2);
+        }
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+
+        @for $i from 1 through $grid-columns-count {
+            // Col
+            .col--#{$breakpoint}-#{$i} {
+                flex: 0 0 percentage($i / $grid-columns-count);
+
+                width: percentage($i / $grid-columns-count);
+                max-width: percentage($i / $grid-columns-count);
+            }
+
+            // Offset
+            .col--offset-#{$breakpoint}-#{$i} {
+                margin-left: percentage($i / $grid-columns-count);
+            }
+        }
+    }
+}
+
+.col--md-padded {
+
+    @include media-breakpoint-up(md) {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+}

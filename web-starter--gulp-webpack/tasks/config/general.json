@@ -1,0 +1,30 @@
+{
+    "root": {
+        "dev": "./dev",
+        "dist": "./dist"
+    },
+    "javascript": {
+        "dev": "js",
+        "dist": "assets/js",
+        "extensions": [".json", ".js"]
+    },
+    "styles": {
+        "dev": "scss/**/*",
+        "dist": "assets/css",
+        "extensions": ".scss"
+    },
+    "images": {
+        "dev": "img/**/*",
+        "dist": "assets/img",
+        "extensions": ".(jpg|png|svg|gif)"
+    },
+    "html": {
+        "dev": "**/*",
+        "dist": "./",
+        "extensions": ".html"
+    },
+    "styleguide": {
+        "dev": "styleguide",
+        "dist": "assets/styleguide"
+    }
+}

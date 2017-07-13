@@ -1,0 +1,10 @@
+p {
+    margin: 1.3rem 0 2.2rem;
+}
+
+p {
+
+    + h1, + h2, + h3, + h4, + h5, + h6 {
+        margin-top: 2rem;
+    }
+}
