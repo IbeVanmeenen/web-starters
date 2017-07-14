@@ -9,7 +9,7 @@ import config from './config/general';
 
 
 const watch = () => {
-    const tasks = ['css', 'img', 'styleguide'];
+    const tasks = ['css', 'img'];
     let sourceFiles = [];
 
     for (task of tasks) {

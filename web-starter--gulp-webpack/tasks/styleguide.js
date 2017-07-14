@@ -11,6 +11,7 @@ import config from './config/general';
 
 const sourcePath = path.join(config.root.dev, config.styleguide.dev);
 const distPath = path.join(config.root.dist, config.styleguide.dist);
+
 const styleguideConfig = {
     'layout': 'default',
     'layouts': sourcePath + '/views/layouts/*',
@@ -19,7 +20,7 @@ const styleguideConfig = {
         sourcePath + '/views/**/*',
         '!' + sourcePath + '/views/+(layouts)/**'
     ],
-    'materials': sourcePath + '/materials/**/*',
+    'materials': sourcePath + '/materials/**/*.html',
     'data': sourcePath + '/data/**/*.{json,yml}',
     'docs': sourcePath + '/docs/**/*.md',
     'keys': {
@@ -28,16 +29,14 @@ const styleguideConfig = {
         'docs': 'docs'
     },
     'helpers': {},
-    'logErrors': false,
-    'dest': distPath + '/'
+    'logErrors': true,
+    'dest': distPath
 };
 
-console.log(styleguideConfig);
 
+const styleguide = (done) => {
 
-const styleguide = () => {
-
-    return assemble(styleguideConfig);
+    return assemble(styleguideConfig, done);
 };
 
 

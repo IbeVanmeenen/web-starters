@@ -19,7 +19,7 @@
         "extensions": ".(jpg|png|svg|gif)"
     },
     "html": {
-        "dev": "**/*",
+        "dev": "html/**/*",
         "dist": "./",
         "extensions": ".html"
     },

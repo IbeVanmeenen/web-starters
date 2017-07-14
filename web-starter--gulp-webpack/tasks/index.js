@@ -12,8 +12,8 @@ import server from './server';
 import watch from './watch';
 
 
-export const dev = gulp.series(clean, [styles, javascript, images, html], styleguide, server, watch);
-export const build = gulp.series(clean, [styles, javascript, images, html], styleguide);
+export const dev = gulp.series(clean, gulp.parallel(styles, javascript, images), html, styleguide, server, watch);
+export const build = gulp.series(clean, gulp.parallel(styles, javascript, images), html, styleguide);
 
 
 export default dev;
