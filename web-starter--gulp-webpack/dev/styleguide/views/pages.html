@@ -1,0 +1,15 @@
+---
+title: Pages
+---
+
+<h1 class="styleguide__page-title">
+    Pages
+</h1>
+
+<nav class="styleguide__item-section styleguide__page-nav">
+    {{#each views.pages.items}}
+        <a href="pages/{{@key}}.html" target="_blank" rel="nofollow noreferrer" class="styleguide__page-nav__item">
+            {{name}}
+        </a>
+    {{/each}}
+</nav>

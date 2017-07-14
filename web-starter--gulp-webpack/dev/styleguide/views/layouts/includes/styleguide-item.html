@@ -1,0 +1,28 @@
+<section class="styleguide__item-section" id="{{@key}}">
+    {{#if items}}
+        <header>
+            <h2 class="styleguide__item-title">
+                {{name}}
+            </h2>
+        </header>
+        {{#each items}}
+            <section id="{{@key}}" class="styleguide__item-sub-section">
+                <header>
+                    <h3 class="styleguide__item-title styleguide__item-title--sub">
+                        {{name}}
+                    </h3>
+                </header>
+
+                {{> styleguide-item-content this}}
+            </section>
+        {{/each}}
+    {{else}}
+        <header>
+            <h2 class="styleguide__item-title">
+                {{name}}
+            </h2>
+        </header>
+
+        {{> styleguide-item-content this}}
+    {{/if}}
+</section>

@@ -1,0 +1,19 @@
+---
+title: Docs
+---
+
+<h1 class="styleguide__page-title">
+    Docs
+</h1>
+
+{{#each docs}}
+    <section id="{{@key}}" class="styleguide__item-section">
+        <header>
+            <h2 class="styleguide__item-title">
+                {{name}}
+            </h2>
+        </header>
+
+        {{{content}}}
+    </section>
+{{/each}}

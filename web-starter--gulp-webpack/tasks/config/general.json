@@ -25,6 +25,7 @@
     },
     "styleguide": {
         "dev": "styleguide",
-        "dist": "assets/styleguide"
+        "dist": "assets/styleguide",
+        "extensions": ".(html,json,md,yml)"
     }
 }

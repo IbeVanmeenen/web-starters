@@ -1,0 +1,40 @@
+<!-- fabricator menu -->
+<a href="index.html" class="styleguide__nav__item">
+    <img src="{{general.logoUrl}}" alt="{{general.projectName}}" class="styleguide__nav__img">
+</a>
+
+<hr class="styleguide__nav__hr">
+
+{{#each materials}}
+    <a href="{{@key}}.html" class="styleguide__nav__item">
+        {{name}}
+    </a>
+    {{#each items}}
+        <a href="{{@../key}}.html#{{@key}}" class="styleguide__nav__item styleguide__nav__item--sub">
+            {{name}}
+        </a>
+    {{/each}}
+{{/each}}
+
+<hr class="styleguide__nav__hr">
+
+{{#each views}}
+    <a href="{{@key}}.html" class="styleguide__nav__item">
+        {{name}}
+    </a>
+    {{#each items}}
+        <a href="{{@../key}}/{{@key}}.html" target="_blank" class="styleguide__nav__item styleguide__nav__item--sub">
+            {{name}}
+        </a>
+    {{/each}}
+{{/each}}
+
+<a href="docs.html" class="styleguide__nav__item">
+    Docs
+</a>
+{{#each docs}}
+    <a href="docs.html#{{@key}}" class="styleguide__nav__item styleguide__nav__item--sub">
+        {{name}}
+    </a>
+{{/each}}
+<!-- /fabricator menu -->

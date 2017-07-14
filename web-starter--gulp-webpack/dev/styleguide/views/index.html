@@ -1,0 +1,19 @@
+---
+title: Styleguide
+---
+
+<header>
+    <h1 class="styleguide__page-title">
+        {{general.projectName}} - Styleguide
+    </h1>
+</header>
+
+<section class="styleguide__item-section">
+    {{#each general.colors}}
+        <div class="styleguide__color" style="background-color: {{this}}">
+            <h4 class="styleguide__color__name">
+                {{@key}} _ <small>{{this}}</small>
+            </h4>
+        </div>
+    {{/each}}
+</section>
