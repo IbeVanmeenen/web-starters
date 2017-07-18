@@ -29,14 +29,17 @@ const styleguideConfig = {
         'docs': 'docs'
     },
     'helpers': {},
-    'logErrors': true,
+    'logErrors': false,
     'dest': distPath
 };
 
 
-const styleguide = (done) => {
+const styleguide = () => {
 
-    return assemble(styleguideConfig, done);
+    return new Promise((resolve) => {
+        assemble(styleguideConfig);
+        resolve();
+    });
 };
 
 
